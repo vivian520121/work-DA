@@ -1,0 +1,16 @@
+.top_title{
+	width: 100%;
+	height: 100px;
+	line-height: 100px;
+}
+.top_title>div{
+	width: 30%;
+	height: 100%;
+	float: left;
+	text-align: center;
+}
+.box_wrapper{
+	width: 100%;
+	height: 200px;
+	border: 1px solid #5F7C8A;
+}

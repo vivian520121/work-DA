@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="../css/style.css" />
+		<link rel="stylesheet" type="text/css" href="../css/hierarchy.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/manhuaDate.1.0.css">
+        
+	</head>
+	<body>
+		<header>
+			<div class="header">
+			     <span>xx数据分析系统</span>		
+			     <div class="my">
+			     	<img src="../img/my.png" alt="" />
+			     	<span>用户名</span>
+			     </div>
+		    </div>
+		</header>
+	<section>
+		<nav class="nav_left">
+			<ul>
+				<li>数据概况</li>
+				
+				
+			</ul>
+		</nav>
+		<div class="center">
+			<div>
+				<ul class="tab">
+					<li class="active">按上下级</li>
+					<li>按行政区域</li>
+				</ul>
+				<div class="up_content">
+					<div class="company_section">
+						<form>
+					        <div class="inp_box">
+						       <label for="">
+						          省代公司
+					            </label>
+					            <select name="">
+						           <option value="">西安臻学优电子科技有限公司</option>
+					            </select>
+					        </div>
+					        <div class="inp_box">
+						        <label for="">二级代理商</label>
+					            <select name="">
+						           <option value="">全部</option>
+						           <option value="">A代理商</option>
+						           <option value="">B代理商</option>
+						           <option value="">C代理商</option>
+					            </select>
+					        </div>
+					        <div class="inp_box">
+						        <label for="">当前时间</label>
+						        <input type="" name="" value="" class="time mh_date" id="today" />
+						        <span id="" class="small">
+						        	至
+						        </span>
+						       <input type="" name="" id="nextday" value="" class="time"/>
+					        </div>
+					        <div class="inp_box" >
+						        <label for="" style="padding-right: 18px;">对比时间</label>
+						        <input type="" name="" id="last_today" value="" class="time last_today"/>
+						        <span id="" class="small">
+						        	至
+						        </span>
+						       <input type="" name="" id="last_next" value="" class="time last_today"/>
+						       <span id="add">+</span>
+					        <span id="remove" style="padding: 7px;">-</span>
+					        </div>
+					        <div style="width: 100%;float: left;">
+					        	<input type="button" name="" id="surebtn" value="确定" class="surebtn" />
+					        </div>
+					        
+				        </form>
+					</div>
+					
+				    
+				    <div class="up_result" style="display: none;">
+				    	<!--销售简报-->
+				    	<div class="simple">
+				    		<div class="title">
+				    		  <p><span>销售简报</span><span class="small">2018-05-01至2018-05-30</span></p>
+				    	    </div>
+				    	    <div class="simple_content">
+				    		   
+				    		   	   <div class="Increase">
+				    		   	   	     <div class="box">
+				    		   	   	     	<div>
+				    		   	   	     		<p>台数增幅</p>
+				    		   	   	     		<p>68.2%</p>
+				    		   	   	     	</div>
+				    		   	   	     	<div class="">
+				    		   	   	     		<img src="../img/taishu.png"/>
+				    		   	   	     	</div>
+				    		   	   	     	
+				    		   	   	     </div>
+				    		   	   	     <div class="box">
+				    		   	   	     	<div>
+				    		   	   	     		<p>金额增幅</p>
+				    		   	   	     		<p>59.3%</p>
+				    		   	   	     	</div>
+				    		   	   	     	<div class="">
+				    		   	   	     		<img src="../img/jinge.png"/>
+				    		   	   	     	</div>
+				    		   	   	     	
+				    		   	   	     </div>
+				    		   	   	     <div class="box">
+				    		   	   	     	<div >
+				    		   	   	     		<p>产能增幅</p>
+				    		   	   	     		<p>26.1%</p>
+				    		   	   	     	</div>
+				    		   	   	     	<img src="../img/channeng.png"/>
+				    		   	   	     </div>
+				    		   	   </div>
+				    		   	   <div class="bottom_wrapper">
+				    		   	   	    <div class="city">
+				    		   	   	       <form>
+				    		   	   	            <div class="placebox">
+				    		   	   	        	    
+				    		   	   	   		           <div><span>增长最快的两个下级 </span><img src="../img/sanjiao_down_s.png"/></div>
+				    		   	   	   		           <div>商洛市</div>
+				    		   	   	   		           <div>咸阳市</div>
+				    		   	   	             				    		   	   	  
+				    		   	   	           </div>
+				    		   	   	           <div class="placebox">
+				    		   	   	            	   <div> <span>下滑最大的两个下级</span><img src="../img/sanjiao_down_s.png"/></div>
+				    		   	   	   		           <div>宝鸡市</div>
+				    		   	   	   		           <div>延安市</div>			    		   	   	  
+				    		   	   	           </div>
+				    		   	   	       </form>
+				    		   	        </div>
+				    		   	        <div class="company_increase">
+				    		   	        	    <div class="title_box">100万以上的终端<span>增长前<span>5</span>名</span>
+				    		   	        	    </div>
+				    		   	   	    		<div><span class="num1">1</span>金花国美</div>
+				    		   	   	    		<div><span class="num1">2</span>北赛格电脑城</div>
+				    		   	   	    		<div><span class="num1">3</span>咸阳新华书店</div>
+				    		   	   	    		<div><span class="num1">4</span>北赛格电脑城</div>
+				    		   	   	    		<div><span class="num1">5</span>咸阳新华书店</div>
+				    		   	   	    
+				    		   	        </div>
+				    		   	        <div class="company_down">
+				    		   	        	    <div class="title_box">100万以上的终端<span>下滑前<span>5</span>名</span>
+				    		   	        	    </div>
+				    		   	   	    		<div><span class="num2">1</span>金花苏宁</div>
+				    		   	   	    		<div><span class="num2">2</span>汉唐书城</div>
+				    		   	   	    		<div><span class="num2">3</span>雁塔路赛格电脑城</div>
+				    		   	   	    		<div><span class="num2">4</span>汉唐书城</div>
+				    		   	   	    		<div><span class="num2">5</span>雁塔路赛格电脑城</div>
+				    		   	   	    </div>
+				    		   	   </div>
+				    		   	   
+				    		  
+				    		   <div class="radio_wrapper">
+				    		   	  <p style="margin-top: 20px;text-align: center;font-weight: 700;">终端数量同比</p>
+				    		   	    <div class="radio_box">
+				    		   	       	<div class="radio">
+				    		   	  	       
+				    		   	  	       <p>20</p>
+				    		   	        </div>
+				    		   	        <p>新增终端<br/><span class="small">(个数)</span></p>
+				    		   	    </div>
+				    		   	  
+				    		   	    <div class="radio_box">
+				    		   	  	    <div class="radio">
+				    		   	  	       <p>20</p>
+				    		   	        </div> 
+				    		   	        <p>去年同期新增<br/><span class="small">(个数)</span></p>
+				    		   	    </div>
+				    		   	    <div class="radio_box">
+				    		   	  	    <div class="radio">
+				    		   	  	      
+				    		   	  	       <p>20%</p> 
+				    		   	  	      
+				    		   	        </div>
+				    		   	        <p>同比减少</p>
+				    		   	    </div>
+				    		   	    <div class="radio_box">
+				    		   	  	    <div class="radio">
+				    		   	  	        
+				    		   	  	        <p>20</p>
+				    		   	  	        
+				    		   	        </div>
+				    		   	        <p>撤场终端<br/><span class="small">(个数)</span></p>
+				    		   	    </div>
+				    		   	    <div class="radio_box">
+				    		   	  	    <div class="radio">
+				    		   	  	      
+				    		   	  	       <p>20</p>
+				    		   	        </div> 
+				    		   	        <p>终端绝对值数量增加<br/><span class="small">(个数)</span></p>
+				    		   	    </div>
+				    		   </div>
+				    	    </div>
+				    		
+				    	</div>
+				    	<!--销售简报-->
+				    	<!--进货-->
+				    	<div class="stock">
+				    		
+				    		
+				    		<!--总概-->
+				    		<div class="title">
+				    		  <p><span>进货及销售总概</span><span class="small">2018-4-1~2018-4~30</span></p>
+				    		 
+				    	    </div>
+				    	    <div class="stock_total">
+				    	    	<div id="total_echart">
+				    	    		
+				    	    	</div>
+				    	    	
+				    	    	<div class="complete">
+				    	    		<p>完成率</p>
+				    	    		<div class="box">
+				    		   	   	     	<div>
+				    		   	   	     		<p>本年度</p>
+				    		   	   	     		<p>91%</p>
+				    		   	   	     	</div>
+				    		   	   	     	<div class="">
+				    		   	   	     		<img src="../img/channeng.png"/>
+				    		   	   	     	</div>
+				    		   	   	     	
+				    		   	   	 </div>
+				    		   	   	 <div class="box">
+				    		   	   	     	<div>
+				    		   	   	     		<p>当期</p>
+				    		   	   	     		<p>109%</p>
+				    		   	   	     	</div>
+				    		   	   	     	<div class="">
+				    		   	   	     		<img src="../img/channeng.png"/>
+				    		   	   	     	</div>
+				    		   	   	     	
+				    		   	   	 </div>
+				    	    	</div>
+				    	    </div>
+				    	</div>    
+				    	    <!--总概-->
+				    	    
+				    	    <!-- 学生平板-->
+				    	<div class="ipaid_section">
+				    		<div class="title">
+				    		  <p>
+				    		  	<span>学生平板进货及实销<span class="small">本年度</span></span>
+				    		  	
+				    		  	<span class="choose_class" id="choose_class"><span>机型</span><img src="../img/ipaid.png" alt="" width="30px"/></span>
+				    		  	<span class="choose_money" >
+				    		  		<label>价位段</label>
+				    		  		<select name="" id="stu_select">
+				    		  			<option value="所有">所有</option>
+				    		  			<option value="2000以下">2000以下</option>
+				    		  			<option value="2000~2598">2000~2598</option>
+				    		  			<option value="2598~3000">2598~3000</option>
+				    		  			<option value="3000以上">3000以上</option>
+				    		  		</select>
+				    		  	</span>
+				    		  </p>
+				    		
+				    		  <div class="class_box" id="class_box" style="display: none;">
+				    		  	<ul id="class_list">
+				    		  		
+				    		  	</ul>
+				    		  	<input type="button" name="" id="cancel_btn" value="取消" class="cancel_btn" />
+				    		  	<input type="button" name="" id="surebtn1" value="确定" class="sure_btn" />
+				    		  </div>
+				    	    </div>
+				    	    <div class="ipaid_content">
+				    	    	<!--所有-->
+				    	    	<div class="echart_box" >
+				    	    		<!--累计-->
+				    	    		<div id="total">
+				    	    			
+				    	    		</div>
+				    	    		<!--2000以下-->
+				    	    		<!--<div id="ipaid1" style="display: none;">
+				    	    			
+				    	    		</div>
+				    	    		
+				    	    		<div id="ipaid2" style="display: none;">
+				    	    			
+				    	    		</div>
+				    	    		<div id="ipaid3" style="display: none;">
+				    	    			
+				    	    		</div>
+				    	    		<div id="ipaid4" style="display: none;">
+				    	    			
+				    	    		</div>-->
+				    	    	</div>
+				    	    	
+				    	    </div>
+				    	</div>
+				    	    
+				    	    <!--学生平板-->
+				    	    
+				    	   <!--幼教产品--> 
+				    	<div class="ipaid_section">
+				    		<div class="title">
+				    		  <p>
+				    		  	<span>幼教产品进货及实销<span class="small">本年度</span></span>
+				    		  	
+				    		  	<span class="choose_class" id="choose_class2"><span>机型</span><img src="../img/ipaid.png" alt="" width="30px"/ ></span>
+				    		  	<span class="choose_money" >
+				    		  		<label>价位段</label>
+				    		  		<select name="" id="child_select">
+				    		  			<option value="所有">所有</option>
+				    		  			<option value="儿童手表">儿童手表</option>
+				    		  			<option value="儿童平板">儿童平板</option>
+				    		  			<option value="点读机">点读机</option>
+				    		  			<option value="点读机及其他">点读机及其他</option>
+				    		  		</select>
+				    		  	</span>
+				    		  </p>
+				    		
+				    		  <div id="class_box2" class="class_box" style="display: none;">
+				    		  	<ul id="class_list2">
+				    		  		<!--<li><input type="checkbox" />u16</li>
+				    		  		<li><input type="checkbox" />u16</li>
+				    		  		<li><input type="checkbox" />u16</li>
+				    		  		<li><input type="checkbox" />u16</li>-->
+				    		  	</ul>
+				    		  	<input type="button" name="" id="cancel_btn2" value="取消" class="cancel_btn" />
+				    		  	<input type="button" name="" id="" value="确定" class="sure_btn" />
+				    		  </div>
+				    	    </div>
+				    	    <div class="ipaid_content">
+				    	    	<!--所有-->
+				    	    	<div class="echart_box" >
+				    	    		<!--累计-->
+				    	    		<div id="total">
+				    	    			
+				    	    		</div>
+				    	    		<!--2000以下-->
+				    	    		<div id="ipaid1" style="display: none;">
+				    	    			
+				    	    		</div>
+				    	    		
+				    	    		<div id="ipaid2" style="display: none;">
+				    	    			
+				    	    		</div>
+				    	    		<div id="ipaid3" style="display: none;">
+				    	    			
+				    	    		</div>
+				    	    		<div id="ipaid4" style="display: none;">
+				    	    			
+				    	    		</div>
+				    	    	</div>
+				    	    	
+				    	    </div>
+				    	</div>
+				    	<!--幼教产品-->
+				    	
+				    	<!--实销概述-->
+				    	<div class="ipaid_section">
+				    		<div class="title">
+				    		  <p>
+				    		  	<span>实销概述<span class="small">2018-05-01至2018-05-31</span></span>
+				    		  	
+				    		  	<span class="choose_money" >
+				    		  		<label>时段</label>
+				    		  		<select name="">
+				    		  			<option value="">按天</option>
+				    		  			<option value="">按周</option>
+				    		  			<option value="">按月</option>
+				    		  			<option value="">按季度</option>
+				    		  			<option value="">按年</option>
+				    		  		</select>
+				    		  	</span>
+				    		  </p>
+				    		
+				    		
+				    	    </div>
+				    	    <div class="ipaid_content">
+				    	    	<!--所有-->
+				    	    	<div class="echart_box" >
+				    	    		<!--累计-->
+				    	    		<div id="sale">
+				    	    			
+				    	    		</div>
+				    	    		<!--2000以下-->
+				    	    		<div id="ipaid1" style="display: none;">
+				    	    			
+				    	    		</div>
+				    	    		
+				    	    		<div id="ipaid2" style="display: none;">
+				    	    			
+				    	    		</div>
+				    	    		<div id="ipaid3" style="display: none;">
+				    	    			
+				    	    		</div>
+				    	    		<div id="ipaid4" style="display: none;">
+				    	    			
+				    	    		</div>
+				    	    	</div>
+				    	    	
+				    	    </div>
+				    	</div>
+				    	<!--实销概述-->
+				    	 
+				    	<!--终端增幅排名-->
+				    	<div class="ipaid_section">
+				    		<div class="title">
+				    		  <p>
+				    		  	<span>终端增幅排名<span class="small">2018-05-01至2018-05-31</span></span>
+				    		  	
+				    		  	<span class="choose_money" >
+				    		  		<label>时段</label>
+				    		  		<select name="">
+				    		  			<option value="">年实销金额100万以上</option>
+				    		  			<option value="">年实销金额50-100万</option>
+				    		  			<option value="">年实销金额30-50万</option>
+				    		  			<option value="">年实销金额10-30万</option>
+				    		  	
+				    		  		</select>
+				    		  	</span>
+				    		  </p>
+				    		
+				    		
+				    	    </div>
+				    	    <div class="ipaid_content">
+				    	    	<!--所有-->
+				    	    	<div class="echart_box" style="border: 0;">
+				    	    		<div class="ranking">
+				    	    			<p>同比增幅前五名（100万以上）</p>
+				    	    			<div class="list_box">
+				    	    				<img src="../img/ranking1.png"/>
+				    	    				<div class="list">
+				    	    					<p>西安臻学有电子科技有限公司</p>
+				    	    					<p>西安臻学有电子科技有限公司</p>
+				    	    					<p>西安臻学有电子科技有限公司</p>
+				    	    					<p>西安臻学有电子科技有限公司</p>
+				    	    					<p>西安臻学有电子科技有限公司</p>
+				    	    				</div>
+				    	    			</div>
+				    	    		</div>
+				    	    		<div class="ranking">
+				    	    			<p>同比增幅后五名（100万以上）</p>
+				    	    			<div class="list_box">
+				    	    				<img src="../img/ranking2.png"/>
+				    	    				<div class="list">
+				    	    					<p>西安臻学有电子科技有限公司</p>
+				    	    					<p>西安臻学有电子科技有限公司</p>
+				    	    					<p>西安臻学有电子科技有限公司</p>
+				    	    					<p>西安臻学有电子科技有限公司</p>
+				    	    					<p>西安臻学有电子科技有限公司</p>
+				    	    				</div>
+				    	    			</div>
+
+				    	    		</div>
+				    	    			
+				    	    		
+				    	             
+				    	    	</div>
+				    	    	<div>
+				    		        <p>
+				    		  			<span class="choose_money" style="margin-right: 20px;">
+				    		  		         
+				    		  		        <select name="" style="width: 120px;">
+				    		  			         <option value="">按台数</option>
+				    		  			        <option value="">按金额</option>
+		
+				    		  		        </select>
+				    		  	        </span>
+				    		        </p>
+			
+				    	        </div>
+				    	        <div id="end_num">
+				    	        	
+				    	        </div>
+				    	    	
+				    	    </div>
+				    	</div>
+				    	<!--终端增幅排名-->
+				    	
+				    	
+				    	<!--原有终端实销同比-->
+				    	<div class="ipaid_section">
+				    		<div class="title">
+				    		  <p>
+				    		  	<span>原有终端实销同比<span class="small">2018-05-01至2018-05-31</span></span>
+				    		  </p>
+				    		
+				    		
+				    	    </div>
+				    	    <div class="ipaid_content">
+				    	    	<!--所有-->
+				    	    	<div class="echart_box" >
+				    	    		<!--累计-->
+				    	    		<div id="beforeMoney">
+				    	    			
+				    	    		</div>
+				    	    		<div id="beforeNum">
+				    	    			
+				    	    		</div>
+				    	    	</div>
+				    	    	
+				    	    </div>
+				    	</div>
+				    	<!--原有终端实销同比-->
+				    	
+				    		<!--市场等级实销-->
+				    	<div class="ipaid_section">
+				    		<div class="title">
+				    		  <p>
+				    		  	<span>市场等级实销<span class="small">2018-05-01至2018-05-31</span></span>
+				    		  </p>
+				    		
+				    		
+				    	    </div>
+				    	    <div class="ipaid_content">
+				    	    	<!--所有-->
+				    	    	<div class="echart_box" >
+				    	    		<!--累计-->
+				    	    		<div class="table_wrapper">
+				    	    			<div class="table">
+				    	    				<div class="table_left">
+				    	    					<div id="">
+				    	    						单位：万
+				    	    					</div>
+				    	    					<div class="">
+				    	    						类型
+				    	    					</div>
+				    	    					<div class="">
+				    	    						省级市场
+				    	    					</div>
+				    	    					<div class="">
+				    	    					地级市场	
+				    	    					</div>
+				    	    					<div class="">
+				    	    						县级市场
+				    	    					</div>
+				    	    				</div>
+				    	    				<div class="year17">
+				    	    					<div class="">
+				    	    						17年
+				    	    					</div>
+				    	    					<div class="salebox">
+				    	    						<div class="">
+				    	    							有效终端数
+				    	    						</div>
+				    	    						<div>
+				    	    							台数
+				    	    						</div>
+				    	    						<div class="">
+				    	    							金额
+				    	    						</div>
+				    	    					</div>
+				    	    					<div class="salebox">
+				    	    						<div class="">
+				    	    							26
+				    	    						</div>
+				    	    						<div>
+				    	    							277
+				    	    						</div>
+				    	    						<div class="">
+				    	    							59.8
+				    	    						</div>
+				    	    					</div>
+				    	    					<div class="salebox">
+				    	    						<div class="">
+				    	    							27
+				    	    						</div>
+				    	    						<div>
+				    	    							392
+				    	    						</div>
+				    	    						<div class="">
+				    	    							75.6
+				    	    						</div>
+				    	    					</div>
+				    	    					<div class="salebox">
+				    	    						<div class="">
+				    	    							27
+				    	    						</div>
+				    	    						<div>
+				    	    							392
+				    	    						</div>
+				    	    						<div class="">
+				    	    							75.6
+				    	    						</div>
+				    	    					</div>
+				    	    				</div>
+				    	    				<div class="year18">
+				    	    					<div class="">
+				    	    						17年
+				    	    					</div>
+				    	    					<div class="salebox">
+				    	    						<div class="">
+				    	    							有效终端数
+				    	    						</div>
+				    	    						<div>
+				    	    							台数
+				    	    						</div>
+				    	    						<div class="">
+				    	    							金额
+				    	    						</div>
+				    	    					</div>
+				    	    					<div class="salebox">
+				    	    						<div class="">
+				    	    							26
+				    	    						</div>
+				    	    						<div>
+				    	    							277
+				    	    						</div>
+				    	    						<div class="">
+				    	    							59.8
+				    	    						</div>
+				    	    					</div>
+				    	    					<div class="salebox">
+				    	    						<div class="">
+				    	    							27
+				    	    						</div>
+				    	    						<div>
+				    	    							392
+				    	    						</div>
+				    	    						<div class="">
+				    	    							75.6
+				    	    						</div>
+				    	    					</div>
+				    	    					<div class="salebox">
+				    	    						<div class="">
+				    	    							27
+				    	    						</div>
+				    	    						<div>
+				    	    							392
+				    	    						</div>
+				    	    						<div class="">
+				    	    							75.6
+				    	    						</div>
+				    	    					</div>
+				    	    				</div>
+				    	    				<div class="compare">
+				    	    					<div class="">
+				    	    					同比
+				    	    					</div>
+				    	    					<div class="comparebox">
+				    	    						<div class="">
+				    	    							台数同比
+				    	    						</div>
+				    	    						<div class="">
+				    	    							金额同比
+				    	    						</div>
+				    	    					</div>
+				    	    					<div class="comparebox">
+				    	    						<div class="">
+				    	    							41.5%
+				    	    						</div>
+				    	    						<div class="">
+				    	    							26.4%
+				    	    						</div>
+				    	    					</div>
+				    	    					<div class="comparebox">
+				    	    						<div class="">
+				    	    							41.5%
+				    	    						</div>
+				    	    						<div class="">
+				    	    							26.4%
+				    	    						</div>
+				    	    					</div>
+				    	    					<div class="comparebox">
+				    	    						<div class="">
+				    	    							41.5%
+				    	    						</div>
+				    	    						<div class="">
+				    	    							26.4%
+				    	    						</div>
+				    	    					</div>
+				    	    				</div>
+				    	    				<div class="average">
+				    	    					<div class="">
+				    	    						平均单店产能(台)
+				    	    					</div>
+				    	    					<div class="averagebox">
+				    	    						<div class="">
+				    	    							17年
+				    	    						</div>
+				    	    						<div>
+				    	    							18年
+				    	    						</div>
+				    	    						<div class="">
+				    	    							同比
+				    	    						</div>
+				    	    					</div>
+				    	    					<div class="averagebox">
+				    	    						<div class="">
+				    	    							26
+				    	    						</div>
+				    	    						<div>
+				    	    							277
+				    	    						</div>
+				    	    						<div class="">
+				    	    							59.8
+				    	    						</div>
+				    	    					</div>
+				    	    					<div class="averagebox">
+				    	    						<div class="">
+				    	    							27
+				    	    						</div>
+				    	    						<div>
+				    	    							392
+				    	    						</div>
+				    	    						<div class="">
+				    	    							75.6
+				    	    						</div>
+				    	    					
+				    	    					</div>
+				    	    					<div class="averagebox">
+				    	    						<div class="">
+				    	    							27
+				    	    						</div>
+				    	    						<div>
+				    	    							392
+				    	    						</div>
+				    	    						<div class="">
+				    	    							75.6
+				    	    						</div>
+				    	    					
+				    	    					</div>
+				    	    				</div>
+				    	    			</div>
+				    	    		</div>
+				    	    		<div id="beforeNum">
+				    	    			
+				    	    		</div>
+				    	    	</div>
+				    	    	
+				    	    	<div class="echart_box">
+				    	    		<div id="market_echart1">
+				    	    			
+				    	    		</div>
+				    	    		<div id="market_echart2">
+				    	    			
+				    	    		</div>
+				    	    		<div id="market_echart3">
+				    	    			
+				    	    		</div>
+				    	    	</div>
+				    	    	
+				    	    </div>
+				    	    
+				    	    
+				    	</div>
+				    	
+				    	<!--市场等级实销-->
+				    	
+				    	<!--进货-->
+				    </div>
+				</div>
+				
+			</div>
+		</div>
+	</section>
+	</body>
+	<script src="https://code.jquery.com/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
+	<script type="text/javascript" src="../js/manhuaDate.1.0.js"></script>
+        
+	<script src="../js/index.js"></script>
+	<script type="text/javascript">
+       $(function (){
+	    $("input.mh_date").manhuaDate({					       
+		 Event : "click",		       
+		Left : 0,
+		Top : -16,
+		fuhao : "-",
+		isTime : false,
+		beginY : 2010,
+		endY :2019
+	});
+	
+});
+</script>
+</html>

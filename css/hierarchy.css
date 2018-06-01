@@ -1,0 +1,495 @@
+.company_section,.simple,.stock,.ipaid_section{
+	background: #FFFFFF;
+	float: left;
+	width: 100%;
+}
+.simple,.stock,.ipaid_section{
+	margin-top: 20px ;
+}
+.inp_box{
+	width: 45%;
+	height: auto;
+	float: left;
+	padding: 20px 15px;
+}
+.inp_box select{
+	height: 40px;
+	padding: 0 10px;
+	width: 380px;
+}
+.time{
+	height: 30px;
+	text-align: center;
+}
+.surebtn{
+	background: #24B692;
+    color: #FFFFFF;
+    display: block;
+    padding: 10px 50px;
+    border: 0;
+    margin: 18px auto;
+    
+}
+.title{
+	padding: 0 20px;
+    line-height: 50px;
+    position: relative;
+    border-bottom: 1px solid #E6E6E6;
+}
+.title p:first-child span:first-child{
+	font-size: 18px;
+}
+.small{
+	font-size: 12px;
+	color:#B9B9B9;
+}
+.title p:last-child{
+	font-size: 10px;
+	color: #2E384A;
+}
+.up_result{
+	
+	height: auto;
+	float: left;
+	width: 100%;
+}
+
+.simple_content{
+	margin-left: 20px;
+}
+
+.radio_wrapper{
+	width: 100%;
+	float: right;
+	
+}
+.city,.company_down,.company_increase{
+	width: 28%;
+    float: left;
+    height: auto;
+    margin: 40px 0 50px 5%;
+}
+.company_down>div,.company_increase>div{
+	width: 100%;
+	line-height: 45px;
+	
+}
+.company_down,.company_increase{
+	border: 1px solid #d1d3d6;
+}
+.title_box{
+	padding: 0 5%;
+}
+.title_box>span{
+	float: right;
+	margin-right: 10px;
+}
+.title_box>span>span{
+	font-size: 18px;
+	font-weight: 600;
+}
+.company_increase .title_box{
+	width: 90%;
+	height: 40px;
+	background:#FF9700 ;
+	color: #FFFFFF;
+	
+}
+.company_down .title_box{
+	width: 90%;
+	height: 40px;
+	line-height: 40px;
+	background:#6E8FA0 ;
+	color: #FFFFFF;
+	
+}
+.num1{
+	color:#FF9700 ;
+	font-size: 18px;
+	font-weight: 700;
+	padding: 0 10px;
+}
+.num2{
+	color:#6E8FA0 ;
+	font-size: 18px;
+	font-weight: 700;
+	padding: 0 10px;
+}
+.Increase{
+	width:95%;
+	height: 150px;
+}
+.bottom_wrapper{
+	width:95%;
+	height: 150px;
+}
+
+.Increase .box{
+	width: 28%;
+    float: left;
+    height: 100px;
+    color: #FFFFFF;
+    margin: 40px 0 50px 5%;
+}
+.complete .box{
+	width: 80%;
+    float: left;
+    height: 100px;
+    color: #FFFFFF;
+    margin: 20px 5% 0 0;
+}
+.Increase .box img, .complete .box img{
+	width: 30px;
+    margin: 30px auto;
+    display: block;
+    line-height: 95px;
+}
+.Increase .box>div:first-child,.complete .box>div:first-child{
+	width: 60%;
+    height: 100%;
+	float: left;
+}
+.Increase .box>div:first-child>p:first-child,.complete .box>div:first-child>p:first-child{
+	line-height: 50px;
+	text-align: center;
+	font-size: 12px;
+}
+.Increase .box>div:first-child>p:last-child,.complete .box>div:first-child>p:last-child{
+	text-align: center;
+	font-size: 18px;
+	font-weight: 800;
+}
+.Increase .box>div:last-child,.complete .box>div:last-child{
+	width: 40%;
+	float: left;
+}
+.Increase .box:first-child{
+	background:#F2B606 ;
+}
+.Increase .box:nth-of-type(2){
+	background:#83B846 ;
+}
+.Increase .box:nth-of-type(3){
+	background:#22AC8A ;
+}
+.Increase .box:first-child>div:first-child{
+	background:#FDC005 ;
+}
+.Increase .box:nth-of-type(2)>div:first-child{
+	background:#8BC24A;
+}
+.Increase .box:nth-of-type(3)>div:first-child{
+	background:#24B691;
+}
+.complete .box:nth-of-type(1)>div:first-child{
+	background:#5F7C8A ;
+}
+.complete .box:nth-of-type(2)>div:first-child{
+	background: #24B692;
+}
+.complete .box:nth-of-type(1){
+	background:#5A7682 ;
+}
+.complete .box:nth-of-type(2){
+	background:#22AC8A ;
+}
+.placebox{
+	width: 100%;
+	float: left;
+	margin: 0 0 20px 0;
+}
+.placebox>div{
+	width: 90%;
+	padding: 0 5%;
+	height: 40px;
+	line-height: 40px;
+	border: 1px solid #d7d7d8;
+	border-top: 0;
+}
+.placebox>div:first-child{
+	background:#24B692 ;
+	color: #FFFFFF;
+}
+
+.placebox>div:first-child img{
+	display: block;
+	float: right;
+	width: 30px;
+	margin-top:5px;
+	
+}
+
+.first,.last{
+	width: 45%;
+	text-align: center;
+	display: block;
+	float: left;
+}
+.btn100{
+	width: 10%;
+	display: block;
+	float:left;
+}
+.btn100 img{
+	width: 100%;
+	margin-top: 10px;
+}
+.contro,.compay_img{
+	width: 33.33%;
+	float: left;
+
+	
+}
+.contro p{
+	line-height: 30px;
+	text-align: center;
+	font-size: 14px;
+	color: #2E384A;
+}
+.radio_box{
+	width: 20%;
+	height: auto;
+	float: left;
+}
+.radio_box>p{
+	text-align: center;
+	font-size: 12px;
+	margin-bottom: 30px;
+}
+.radio{
+	width:125px ;
+	height: 125px;
+	border-radius: 145px;
+	color: #FFFFFF;
+	margin: 20px auto;
+}
+.radio_box:nth-of-type(1) .radio{
+	background:#FDC005 ;
+}
+.radio_box:nth-of-type(2) .radio{
+	background:#8BC24A ;
+}
+.radio_box:nth-of-type(3) .radio{
+	background:#25B591 ;
+}
+.radio_box:nth-of-type(4) .radio{
+	background:#5F7C8A ;
+}
+.radio_box:nth-of-type(5) .radio{
+	background:#24A6B6;
+}
+
+.radio p{
+	line-height: 125px;
+	text-align: center;
+	font-size: 34px;
+	font-weight: 800;
+	
+}
+.stock,.stock_total{
+    width: 100%;
+    float: left;
+}
+
+
+
+#total_echart{
+	width:600px;
+	height: 300px;
+	float: left;
+    margin-top: 20px;
+}
+.complete{
+	width: 30%;
+	float: right;
+}
+.choose_money{
+	float: right;
+	line-height: 50px;
+}
+.choose_money select{
+	height: 30px;
+}
+.choose_class{
+	float: right;
+    margin-left: 100px;
+    line-height: 50px;
+    
+}
+.choose_class span{
+	float: left;
+	margin-right: 10px;
+}
+.choose_class img{
+	float: left;
+	margin-top: 10px;
+}
+.class_box{
+	width: 400px;
+	height: 200px;
+	border: 1px solid #DDDDDD;
+	position: absolute;
+	right: 0;
+	background: #FFFFFF;
+    z-index: 999;
+    margin-top: -30px;
+	}
+.class_box ul li{
+	width: 30%;
+	margin-left: 1%;
+	height: 40px;
+	line-height: 40px;
+	list-style: none;
+	float: left;
+   text-align: center;
+}
+.echart_box{
+	border: 1px solid #DDDDDD;
+	height: 300px;
+	margin: 20px auto;
+	width: 90%;
+}
+#ipaid1,#total,#ipaid2,#ipaid3,#ipaid4,#sale,#end_num,#beforeMoney,#beforeNum{
+	width:800px;
+	height: 300px;
+	margin: auto;
+}
+.cancel_btn{
+	width:70px;
+	height: 40px;
+	border-radius: 5px;
+	background: #BCBCBC;
+	color: #FFFFFF;
+	position: absolute;
+	bottom: 10px;
+	right: 90px;
+	border: 0;
+}
+.sure_btn{
+	width: 70px;
+	height:40px ;
+	border-radius: 5px;
+	background: #2DCA93;
+	color: #FFFFFF;
+	bottom: 10px;
+	right: 10px;
+	position: absolute;
+	border: 0;
+}
+#add,#remove{
+	 margin-right: 20px;
+    background: #B9B9B9;
+    color: #fff;
+    margin-right: 8px;
+    padding: 7px 5px;
+}
+.ranking{
+	width: 50%;
+	float: left;
+}
+.ranking>p{
+	line-height: 60px;
+}
+.list_box{
+	width: 100%;
+}
+.list_box img{
+    width: 290px;
+    float: left;
+    height: 195px;
+}
+.list{
+	width: 50%;
+	float: left;
+}
+.list p{
+	line-height: 40px;
+	color: #2E384A;
+	font-size: 14px;
+}
+.table_wrapper{
+	padding: 10px;
+	background:url(../img/green.jpg);
+	background-size:cover ;
+	color: #FFFFFF;
+    width: 980px;;
+	margin: 10px auto;
+}
+.table{
+	width: 960px;
+	height:206px;
+	margin: 10px auto;
+	text-align:center;
+}
+.table_left{
+	width: 100px;
+	height:100% ;
+	border: 1px solid #FFFFFF;
+	
+}
+.year17,.year18{
+	width: 250px;
+	height: 100%;
+	border: 1px solid #FFFFFF;
+	border-left: 0;
+}
+.compare{
+	width:180px;
+	height: 100%;
+	border: 1px solid #FFFFFF;
+	border-left: 0;
+}
+.average{
+	width: 170px;
+	border: 1px solid #FFFFFF;
+	border-left: 0;
+}
+.table_left>div,.year17>div,.year18>div,.compare>div,.average>div{
+	width: 100%;
+	height: 40px;
+	line-height: 30px;
+    border: 1px solid;
+    border-bottom: 0;
+}
+.table div{
+	float: left;
+	text-align: center;
+}
+.salebox>div:nth-of-type(1){
+	width: 39%;
+    height: 40px;
+    
+}
+.salebox>div:nth-of-type(2),.salebox>div:nth-of-type(3){
+	width: 30%;
+    height: 40px;
+    border-left: 1px solid #FFFFFF;
+    border-bottom: 0;
+}
+.salebox>div:nth-of-type(3){
+	border-right: 0;
+	}
+.comparebox div{
+	width: 48%;
+	height: 40px;
+}
+.comparebox>div:first-child{
+	border-right: 1px solid #FFFFFF;
+}
+.averagebox div{
+	width: 32.333%;
+	height:40px;
+}
+.averagebox>div:nth-of-type(2){
+	border-left: 1px solid #fff;
+	border-right: 1px solid #fff;
+}
+.table_left>div:nth-of-type(2),.table_left>div:nth-of-type(4),.compare>div:nth-of-type(2),.compare>div:nth-of-type(4),.year17>div:nth-of-type(2),.year17>div:nth-of-type(4)
+,.year18>div:nth-of-type(2),.year18>div:nth-of-type(4),.average>div:nth-of-type(2),.average>div:nth-of-type(4){
+	background: rgba(255,255,255,0.5);
+}
+#market_echart1,#market_echart2,#market_echart3{
+	width: 300px;
+	height: 600px;
+	float: left;
+}
