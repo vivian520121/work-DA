@@ -160,14 +160,20 @@ $(function() {
 				 if (options.isTime){			
 					var nd = new Date();
 					str = $("#year").val() + options.fuhao + $("#month").val() + options.fuhao + dv + " "+ nd.getHours()+":"+nd.getMinutes()+":"+nd.getSeconds();
+					str2 = $("#year").val()-1 + options.fuhao + $("#month").val() + options.fuhao + dv + " "+ nd.getHours()+":"+nd.getMinutes()+":"+nd.getSeconds();
 				 }else{
 					str = $("#year").val() + options.fuhao + $("#month").val() + options.fuhao + dv;
-					Str2=$("#year").val()-1 + options.fuhao + $("#month").val() + options.fuhao + dv;//上一年的
+					str2=$("#year").val()-1 + options.fuhao + $("#month").val() + options.fuhao + dv;//上一年的
 				}	
 				//上一年
-				$("input.dateVisited").val(str);
-				$("#last_today").val(Str2)
-				$("#last_next").val(Str2)
+				var day = new Date(Date.parse(str.replace(/-/g, '/')));  
+			    var day2 = new Date(Date.parse(str2.replace(/-/g, '/')));  
+			     var today = new Array('星期日','星期一','星期二','星期三','星期四','星期五','星期六');  
+                 var week = today[day.getDay()];  
+                  var week2 = today[day2.getDay()]; 
+				$("input.dateVisited").val(str+week);
+				$("#last_today").val(str2+week2)
+				$("#last_next").val(str2+week2)
 				$("input.dateVisited").removeClass('dateVisited')
 				$(".calender").hide();
 			}

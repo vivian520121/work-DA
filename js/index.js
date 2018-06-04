@@ -31,15 +31,15 @@ if(p1=="2000以下"){
 }
 else if(p1=="2000~2598"){
 
-	$("#class_list").prepend("<li><input type='checkbox' />u21</li><li><input type='checkbox' />u22(16G)</li><li><input type='checkbox' />u22(32G 无笔版)</li><li><input type='checkbox'/>Umix1</li>")
+	$("#class_list").prepend("<li><input type='checkbox' value='u21' />u21</li><li><input type='checkbox' value='u22(16G)' />u22(16G)</li><li><input type='checkbox' value='u22(32G 无笔版)'/>u22(32G 无笔版)</li><li><input type='checkbox' value='Umix1'/>Umix1</li>")
 
 }
 else if(p1=="2598~3000"){
-	$("#class_list").prepend("<li><input type='checkbox' />U18S</li><li><input type='checkbox' />u22(32G)</li><li><input type='checkbox' />u26</li><li><input type='checkbox' />U26(2G)</li>")
+	$("#class_list").prepend("<li><input type='checkbox' value='U18S'/>U18S</li><li><input type='checkbox' value='u22(32G)' />u22(32G)</li><li><input type='checkbox'value='u26' />u26</li><li><input type='checkbox'value='U26(2G)' />U26(2G)</li>")
 
 }
 else if(p1=="3000以上"){
-	$("#class_list").prepend("<li><input type='checkbox' />u26(64G)</li><li><input type='checkbox' />U30</li><li><input type='checkbox' />U32</li><li><input type='checkbox' />U50</li><li><input type='checkbox' />U51(3+64)</li>")
+	$("#class_list").prepend("<li><input type='checkbox' value='u26(64G)' />u26(64G)</li><li><input type='checkbox' value='U30' />U30</li><li><input type='checkbox' value='U32'/>U32</li><li><input type='checkbox' value='U50'/>U50</li><li><input type='checkbox' value='U51(3+64)'/>U51(3+64)</li>")
 
 }
 }) 
@@ -367,24 +367,60 @@ if (option2 && typeof option2 === "object") {
 }
 
 $('#surebtn1').click(function(){
+	var p1=$('#stu_select').children('option:selected').val()
 	var arr =new Array()
+	var new_inarr = []
+	var new_outarr = []
+	var new_differarr = []
 	var ck=$('#class_list :input[type=checkbox]')
-	ck.each(function(){
+	if(p1=='2000以下'){
+		var inArr =student[0].in
+	var outArr=student[0].out
+	var differArr = student[0].differ
+	}
+	else if(p1=='2000~2598'){
+		var inArr =student[1].in
+	var outArr=student[1].out
+	var differArr = student[1].differ
+	}
+	else if(p1=='2598~3000'){
+		var inArr =student[2].in
+	var outArr=student[2].out
+	var differArr = student[2].differ
+	}
+	else if(p1=='3000以上'){
+		var inArr =student[3].in
+	var outArr=student[3].out
+	var differArr = student[3].differ
+	}
+	ck.each(function(index){
     if($(this).is(':checked')){    
         arr.push($(this).val())
+        new_inarr.push(inArr[index])
+        new_outarr.push(outArr[index])
+        new_differarr.push(differArr[index])
     }
 
 	
 })
-	console.log(arr)
-	debugger
-	console.log(option2.xAxis.data)
+
 	
      myChart.setOption({
         xAxis: {
             data: arr
 
         },
+        series:[
+        {
+        	data:new_inarr
+        },
+        {
+        	data:new_outarr
+        },
+        {
+        	data:new_differarr
+        },
+        ]
 
     });
 // setInterval("getdata()",1000);
@@ -396,7 +432,11 @@ $('#surebtn1').click(function(){
    var str = "" + mydate.getFullYear() + "-";
    str += (mydate.getMonth()+1) + "-";
    str += mydate.getDate();
-   return str;
+   var day = new Date(Date.parse(str.replace(/-/g, '/'))); 
+    var w = new Array('星期日','星期一','星期二','星期三','星期四','星期五','星期六');  
+    var week = w[day.getDay()]; 
+    today=str+week
+   return today;
   }
   
   function lastToday(){
@@ -404,7 +444,12 @@ $('#surebtn1').click(function(){
    var str = "" + mydate.getFullYear()-1 + "-";
    str += (mydate.getMonth()+1) + "-";
    str += mydate.getDate();
-   return str;
+    var day = new Date(Date.parse(str.replace(/-/g, '/'))); 
+    var w = new Array('星期日','星期一','星期二','星期三','星期四','星期五','星期六');  
+    var week = w[day.getDay()]; 
+    today=str + week
+   return today;
+   
   }
    $('#today').val(show());
    $('#nextday').val(show())
@@ -415,8 +460,10 @@ $('#surebtn1').click(function(){
  $('#add').click(function(){
  	function add(){
  		var n=1
- 	var d=$('#last_today').val()
+ 	var t=$('#last_today').val()
+ 	d = t.substring(0, t.indexOf('星'));
  	var day = new Date(Date.parse(d.replace(/-/g, '/')));
+ 	 var w = new Array('星期日','星期一','星期二','星期三','星期四','星期五','星期六');  
  	 var strs= new Array(); 
  strs = d.split("-");
  var y = strs[0];
@@ -435,17 +482,24 @@ $('#surebtn1').click(function(){
     if(strMonth < 10){   
         strMonth = "0"+strMonth;   
     }   
-    var strdate=strYear+"-"+strMonth+"-"+strDay;   
+     var lastday=strYear+"-"+strMonth+"-"+strDay;
+    var lastday2= new Date(Date.parse(lastday.replace(/-/g, '/')));
+     var week = w[lastday2.getDay()];
+    
+     strdate =lastday+ week
     return strdate;
  	}
  	$('.last_today').val(add())
  
  })
  $('#remove').click(function(){
- 	function add(){
+ 	function remove(){
  		var n=-1
- 	var d=$('#last_today').val()
+ 	var t=$('#last_today').val()
+ 	d = t.substring(0, t.indexOf('星'));
  	var day = new Date(Date.parse(d.replace(/-/g, '/')));
+ 	
+ 	 var w = new Array('星期日','星期一','星期二','星期三','星期四','星期五','星期六');  
  	 var strs= new Array(); 
  strs = d.split("-");
  var y = strs[0];
@@ -464,10 +518,14 @@ $('#surebtn1').click(function(){
     if(strMonth < 10){   
         strMonth = "0"+strMonth;   
     }   
-    var strdate=strYear+"-"+strMonth+"-"+strDay;   
+    var lastday=strYear+"-"+strMonth+"-"+strDay;
+    var lastday2= new Date(Date.parse(lastday.replace(/-/g, '/')));
+     var week = w[lastday2.getDay()];
+    
+     strdate =lastday+ week
     return strdate;
  	}
- 	$('.last_today').val(add())
+ 	$('.last_today').val(remove())
    
  })
   $('#surebtn').click(function(){
