@@ -1083,14 +1083,14 @@ var mapChart = echarts.init(document.getElementById('map'));
                 color: ['lightskyblue','yellow', 'orangered']
             }
         },
-        dataRange: {  
-                        min: 0,  
-                        max: 1000000,  
-                        text:['High','Low'],  
-                        realtime: false,  
-                        calculable : true,  
-                        color: ['orangered','yellow','lightskyblue']  
-                    },  
+//      dataRange: {  
+//                      min: 0,  
+//                      max: 1000000,  
+//                      text:['High','Low'],  
+//                      realtime: false,  
+//                      calculable : true,  
+//                      color: ['orangered','yellow','lightskyblue']  
+//                  },  
                 geo: {
                     map: '陕西',
                     label: {
@@ -1103,17 +1103,7 @@ var mapChart = echarts.init(document.getElementById('map'));
                             color: '#fff'
                         }
                     },
-//                  roam: false,
-//                  itemStyle: {
-//                      normal: {
-////                          areaColor: '#40458e',
-//                          borderColor: '#6367ad',
-//                          borderWidth: 1.5
-//                      },
-//                      emphasis: {
-////                          areaColor: '#40458e'
-//                      }
-//                  },
+
                     "left": 0,
                     "right": 0,
                     "top": 0,
@@ -1122,15 +1112,39 @@ var mapChart = echarts.init(document.getElementById('map'));
                 series: [
                 {
                     name: '活跃人数分布',
-                    type: 'heatmap',
+                    type: 'map',
                     coordinateSystem: 'geo',
                     blurSize: 30,
-                    data: [],
+                      itemStyle:{
+                    normal:{label:{show:true}},
+                    emphasis:{label:{show:true}}
+                },
+                      data:[
+                    {name: '榆林市', value: 400}
+//                  {name: '湾仔', value: 15477.48},
+//                  {name: '东区', value: 31686.1},
+//                  {name: '南区', value: 6992.6},
+//                  {name: '油尖旺', value: 44045.49},
+//                  {name: '深水埗', value: 40689.64},
+//                  {name: '九龙城', value: 37659.78},
+//                  {name: '黄大仙', value: 45180.97},
+//                  {name: '观塘', value: 55204.26},
+//                  {name: '葵青', value: 21900.9},
+//                  {name: '荃湾', value: 4918.26},
+//                  {name: '屯门', value: 5881.84},
+//                  {name: '元朗', value: 4178.01},
+//                  {name: '北区', value: 2227.92},
+//                  {name: '大埔', value: 2180.98},
+//                  {name: '沙田', value: 9172.94},
+//                  {name: '西贡', value: 3368},
+//                  {name: '离岛', value: 806.98}
+                ],
                      itemStyle:{
                     normal:{label:{show:true}},
                     emphasis:{label:{show:true}}
                 },
-                }
+                },
+                
                 ]
             });
         });
