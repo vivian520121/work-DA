@@ -345,11 +345,12 @@
 }
 .echart_box{
 	border: 1px solid #DDDDDD;
-	height: 300px;
+	height: auto;
 	margin: 20px auto;
+	padding: 20px 0;
 	width: 90%;
 }
-#ipaid1,#total,#ipaid2,#ipaid3,#ipaid4,#sale,#end_num,#beforeMoney,#beforeNum{
+#ipaid1,#total,#ipaid2,#ipaid3,#ipaid4,#sale,#end_num,#beforeMoney,#beforeNum,#childtotal,#sale{
 	width:800px;
 	height: 300px;
 	margin: auto;
@@ -484,12 +485,67 @@
 	border-left: 1px solid #fff;
 	border-right: 1px solid #fff;
 }
-.table_left>div:nth-of-type(2),.table_left>div:nth-of-type(4),.compare>div:nth-of-type(2),.compare>div:nth-of-type(4),.year17>div:nth-of-type(2),.year17>div:nth-of-type(4)
-,.year18>div:nth-of-type(2),.year18>div:nth-of-type(4),.average>div:nth-of-type(2),.average>div:nth-of-type(4){
+.table_left>div:nth-of-type(2),.table_left>div:nth-of-type(4),.table_left>div:nth-of-type(6),.table_left>div:nth-of-type(8),.compare>div:nth-of-type(2),.compare>div:nth-of-type(4),.compare>div:nth-of-type(6),.compare>div:nth-of-type(8),.year17>div:nth-of-type(2),.year17>div:nth-of-type(4)
+,.year17>div:nth-of-type(6),.year17>div:nth-of-type(8),.year18>div:nth-of-type(2),.year18>div:nth-of-type(4),.year18>div:nth-of-type(6),.year18>div:nth-of-type(8),.average>div:nth-of-type(2),.average>div:nth-of-type(4),.average>div:nth-of-type(6),.average>div:nth-of-type(8){
 	background: rgba(255,255,255,0.5);
 }
 #market_echart1,#market_echart2,#market_echart3{
 	width: 300px;
 	height: 600px;
 	float: left;
+}
+.salebox img{
+	display: block;
+	margin: 0 auto;
+}
+.salebox2 img{
+	float: left;
+    width: 35%;
+}
+#beforediffer,#beforediffer2,.salecompare{
+	width:1000px ;
+	margin: 0 auto;
+	position: relative;
+}
+#beforediffer img,#beforediffer2 img,.salecompare img{
+	width: 100%;
+}
+.sale_radio{
+	width: 100%;
+}
+.sale_radio img{
+	display: block;
+	margin: 0 auto;
+}
+.s_tab{
+	width: 160px;
+	border: 1px solid #cbcdd0;
+	height: 30px;
+	float: right;
+	margin: 10px;
+}
+.s_tab li{
+	width: 80px;
+	height: 30px;
+	float: left;
+	list-style: none;
+	text-align: center;
+	font-size: 12px;
+	line-height: 30px;
+	color: #cbcdd0;
+}
+.s_active{
+
+	float: left;
+	background:#6E8FA0 ;
+}
+.new4{
+	
+    position: absolute;
+    right: 0;
+    bottom: 30px;
+}
+#map{
+	width: 800px;
+	height: 500px;
 }

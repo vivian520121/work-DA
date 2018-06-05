@@ -273,20 +273,7 @@
 				    	    		<div id="total">
 				    	    			
 				    	    		</div>
-				    	    		<!--2000以下-->
-				    	    		<!--<div id="ipaid1" style="display: none;">
-				    	    			
-				    	    		</div>
 				    	    		
-				    	    		<div id="ipaid2" style="display: none;">
-				    	    			
-				    	    		</div>
-				    	    		<div id="ipaid3" style="display: none;">
-				    	    			
-				    	    		</div>
-				    	    		<div id="ipaid4" style="display: none;">
-				    	    			
-				    	    		</div>-->
 				    	    	</div>
 				    	    	
 				    	    </div>
@@ -315,41 +302,26 @@
 				    		
 				    		  <div id="class_box2" class="class_box" style="display: none;">
 				    		  	<ul id="class_list2">
-				    		  		<!--<li><input type="checkbox" />u16</li>
-				    		  		<li><input type="checkbox" />u16</li>
-				    		  		<li><input type="checkbox" />u16</li>
-				    		  		<li><input type="checkbox" />u16</li>-->
+				    		  		
 				    		  	</ul>
 				    		  	<input type="button" name="" id="cancel_btn2" value="取消" class="cancel_btn" />
-				    		  	<input type="button" name="" id="" value="确定" class="sure_btn" />
+				    		  	<input type="button" name="" id="surebtn2" value="确定" class="sure_btn" />
 				    		  </div>
 				    	    </div>
 				    	    <div class="ipaid_content">
 				    	    	<!--所有-->
 				    	    	<div class="echart_box" >
 				    	    		<!--累计-->
-				    	    		<div id="total">
-				    	    			
-				    	    		</div>
-				    	    		<!--2000以下-->
-				    	    		<div id="ipaid1" style="display: none;">
+				    	    		<div id="childtotal">
 				    	    			
 				    	    		</div>
 				    	    		
-				    	    		<div id="ipaid2" style="display: none;">
-				    	    			
-				    	    		</div>
-				    	    		<div id="ipaid3" style="display: none;">
-				    	    			
-				    	    		</div>
-				    	    		<div id="ipaid4" style="display: none;">
-				    	    			
-				    	    		</div>
 				    	    	</div>
 				    	    	
 				    	    </div>
 				    	</div>
 				    	<!--幼教产品-->
+				    	<!--进货-->
 				    	
 				    	<!--实销概述-->
 				    	<div class="ipaid_section">
@@ -360,11 +332,12 @@
 				    		  	<span class="choose_money" >
 				    		  		<label>时段</label>
 				    		  		<select name="">
-				    		  			<option value="">按天</option>
 				    		  			<option value="">按周</option>
+				    		  			<!--<option value="">按天</option>
+				    		  			
 				    		  			<option value="">按月</option>
 				    		  			<option value="">按季度</option>
-				    		  			<option value="">按年</option>
+				    		  			<option value="">按年</option>-->
 				    		  		</select>
 				    		  	</span>
 				    		  </p>
@@ -373,24 +346,21 @@
 				    	    </div>
 				    	    <div class="ipaid_content">
 				    	    	<!--所有-->
-				    	    	<div class="echart_box" >
+				    	    	<div class="echart_box" style="border: 0;" >
 				    	    		<!--累计-->
-				    	    		<div id="sale">
-				    	    			
+				    	    		<div id="sale1" class="salebox">
+				    	    			<img src="../img/sale_money.png"/>
 				    	    		</div>
-				    	    		<!--2000以下-->
-				    	    		<div id="ipaid1" style="display: none;">
-				    	    			
+				    	    	</div>
+				    	    	<div class="echart_box" style="border: 0;">
+				    	    		<div id="sale2" class="salebox">
+				    	    			<img src="../img/sale_num.png"/>
 				    	    		</div>
-				    	    		
-				    	    		<div id="ipaid2" style="display: none;">
-				    	    			
-				    	    		</div>
-				    	    		<div id="ipaid3" style="display: none;">
-				    	    			
-				    	    		</div>
-				    	    		<div id="ipaid4" style="display: none;">
-				    	    			
+				    	    	</div>	
+				    	    	<div class="echart_box" style="border:0;" >
+				    	    		<div id="sale3" class="salebox2">
+				    	    			<img src="../img/salelist2.png" style="margin: 0px 20px 0 15%;"/>
+				    	    			<img src="../img/salelist1.png"/>
 				    	    		</div>
 				    	    	</div>
 				    	    	
@@ -406,11 +376,11 @@
 				    		  	
 				    		  	<span class="choose_money" >
 				    		  		<label>时段</label>
-				    		  		<select name="">
-				    		  			<option value="">年实销金额100万以上</option>
-				    		  			<option value="">年实销金额50-100万</option>
-				    		  			<option value="">年实销金额30-50万</option>
-				    		  			<option value="">年实销金额10-30万</option>
+				    		  		<select name="" id="list_select">
+				    		  			<option value="年实销金额100万以上">年实销金额100万以上</option>
+				    		  			<option value="年实销金额50-100万">年实销金额50-100万</option>
+				    		  			<option value="年实销金额30-50万">年实销金额30-50万</option>
+				    		  			<option value="年实销金额10-30万">年实销金额10-30万</option>
 				    		  	
 				    		  		</select>
 				    		  	</span>
@@ -425,12 +395,12 @@
 				    	    			<p>同比增幅前五名（100万以上）</p>
 				    	    			<div class="list_box">
 				    	    				<img src="../img/ranking1.png"/>
-				    	    				<div class="list">
+				    	    				<div class="list" id="list_before">
+				    	    					<!--<p>金花国美</p>
 				    	    					<p>西安臻学有电子科技有限公司</p>
 				    	    					<p>西安臻学有电子科技有限公司</p>
 				    	    					<p>西安臻学有电子科技有限公司</p>
-				    	    					<p>西安臻学有电子科技有限公司</p>
-				    	    					<p>西安臻学有电子科技有限公司</p>
+				    	    					<p>西安臻学有电子科技有限公司</p>-->
 				    	    				</div>
 				    	    			</div>
 				    	    		</div>
@@ -438,17 +408,19 @@
 				    	    			<p>同比增幅后五名（100万以上）</p>
 				    	    			<div class="list_box">
 				    	    				<img src="../img/ranking2.png"/>
-				    	    				<div class="list">
+				    	    				<div class="list"  id="list_after">
+				    	    					<!--<p>西安臻学有电子科技有限公司</p>
 				    	    					<p>西安臻学有电子科技有限公司</p>
 				    	    					<p>西安臻学有电子科技有限公司</p>
 				    	    					<p>西安臻学有电子科技有限公司</p>
-				    	    					<p>西安臻学有电子科技有限公司</p>
-				    	    					<p>西安臻学有电子科技有限公司</p>
+				    	    					<p>西安臻学有电子科技有限公司</p>-->
 				    	    				</div>
 				    	    			</div>
 
 				    	    		</div>
+				    	    		<div style="clear: both;">
 				    	    			
+				    	    		</div>	
 				    	    		
 				    	             
 				    	    	</div>
@@ -456,10 +428,9 @@
 				    		        <p>
 				    		  			<span class="choose_money" style="margin-right: 20px;">
 				    		  		         
-				    		  		        <select name="" style="width: 120px;">
-				    		  			         <option value="">按台数</option>
-				    		  			        <option value="">按金额</option>
-		
+				    		  		        <select name="" style="width: 120px;" id="list_select2"> 
+				    		  			        <option value="按金额">按金额</option>
+		                                        <option value="按台数">按台数</option>
 				    		  		        </select>
 				    		  	        </span>
 				    		        </p>
@@ -487,11 +458,23 @@
 				    	    	<!--所有-->
 				    	    	<div class="echart_box" >
 				    	    		<!--累计-->
-				    	    		<div id="beforeMoney">
-				    	    			
+				    	    		<div>
+				    		        <p>
+				    		  			<span class="choose_money" style="margin-right: 20px;">
+				    		  		         
+				    		  		        <select name="" style="width: 120px;" id="differ_select"> 
+				    		  			        <option value="按金额">按金额</option>
+		                                        <option value="按台数">按台数</option>
+				    		  		        </select>
+				    		  	        </span>
+				    		        </p>
+			
+				    	        </div>
+				    	    		<div id="beforediffer" style="margin: 0 auto;">
+				    	    			<img src="../img/beforediffer1.jpg" />
 				    	    		</div>
-				    	    		<div id="beforeNum">
-				    	    			
+                                    <div id="beforediffer2" style="display: none;">
+				    	    			<img src="../img/beforediffer2.jpg"/>
 				    	    		</div>
 				    	    	</div>
 				    	    	
@@ -559,30 +542,30 @@
 				    	    					</div>
 				    	    					<div class="salebox">
 				    	    						<div class="">
-				    	    							27
+				    	    							16
 				    	    						</div>
 				    	    						<div>
-				    	    							392
+				    	    							90
 				    	    						</div>
 				    	    						<div class="">
-				    	    							75.6
+				    	    							21.1
 				    	    						</div>
 				    	    					</div>
 				    	    					<div class="salebox">
 				    	    						<div class="">
-				    	    							27
+				    	    							24
 				    	    						</div>
 				    	    						<div>
-				    	    							392
+				    	    							126
 				    	    						</div>
 				    	    						<div class="">
-				    	    							75.6
+				    	    							30.6
 				    	    						</div>
 				    	    					</div>
 				    	    				</div>
 				    	    				<div class="year18">
 				    	    					<div class="">
-				    	    						17年
+				    	    						18年
 				    	    					</div>
 				    	    					<div class="salebox">
 				    	    						<div class="">
@@ -597,17 +580,6 @@
 				    	    					</div>
 				    	    					<div class="salebox">
 				    	    						<div class="">
-				    	    							26
-				    	    						</div>
-				    	    						<div>
-				    	    							277
-				    	    						</div>
-				    	    						<div class="">
-				    	    							59.8
-				    	    						</div>
-				    	    					</div>
-				    	    					<div class="salebox">
-				    	    						<div class="">
 				    	    							27
 				    	    						</div>
 				    	    						<div>
@@ -619,13 +591,24 @@
 				    	    					</div>
 				    	    					<div class="salebox">
 				    	    						<div class="">
-				    	    							27
+				    	    							18
 				    	    						</div>
 				    	    						<div>
-				    	    							392
+				    	    							141
 				    	    						</div>
 				    	    						<div class="">
-				    	    							75.6
+				    	    							31.8
+				    	    						</div>
+				    	    					</div>
+				    	    					<div class="salebox">
+				    	    						<div class="">
+				    	    							35
+				    	    						</div>
+				    	    						<div>
+				    	    							250
+				    	    						</div>
+				    	    						<div class="">
+				    	    							60.7
 				    	    						</div>
 				    	    					</div>
 				    	    				</div>
@@ -651,18 +634,18 @@
 				    	    					</div>
 				    	    					<div class="comparebox">
 				    	    						<div class="">
-				    	    							41.5%
+				    	    							56.7%
 				    	    						</div>
 				    	    						<div class="">
-				    	    							26.4%
+				    	    							50.7%
 				    	    						</div>
 				    	    					</div>
 				    	    					<div class="comparebox">
 				    	    						<div class="">
-				    	    							41.5%
+				    	    							98.4%
 				    	    						</div>
 				    	    						<div class="">
-				    	    							26.4%
+				    	    							98.7%
 				    	    						</div>
 				    	    					</div>
 				    	    				</div>
@@ -683,58 +666,49 @@
 				    	    					</div>
 				    	    					<div class="averagebox">
 				    	    						<div class="">
-				    	    							26
+				    	    							10.7
 				    	    						</div>
 				    	    						<div>
-				    	    							277
+				    	    							14.5
 				    	    						</div>
 				    	    						<div class="">
-				    	    							59.8
+				    	    							36.3%
 				    	    						</div>
 				    	    					</div>
 				    	    					<div class="averagebox">
 				    	    						<div class="">
-				    	    							27
+				    	    							5.6
 				    	    						</div>
 				    	    						<div>
-				    	    							392
+				    	    							7.8
 				    	    						</div>
 				    	    						<div class="">
-				    	    							75.6
+				    	    							39.3%
 				    	    						</div>
 				    	    					
 				    	    					</div>
 				    	    					<div class="averagebox">
 				    	    						<div class="">
-				    	    							27
+				    	    							5.3
 				    	    						</div>
 				    	    						<div>
-				    	    							392
+				    	    							7.1
 				    	    						</div>
 				    	    						<div class="">
-				    	    							75.6
+				    	    							36.1%
 				    	    						</div>
 				    	    					
 				    	    					</div>
 				    	    				</div>
 				    	    			</div>
 				    	    		</div>
-				    	    		<div id="beforeNum">
-				    	    			
+				    	    		<div class="sale_radio">
+				    	    			<img src="../img/saleradio.png"/>
+				    	    			<img src="../img/salenum.png"/>
 				    	    		</div>
 				    	    	</div>
 				    	    	
-				    	    	<div class="echart_box">
-				    	    		<div id="market_echart1">
-				    	    			
-				    	    		</div>
-				    	    		<div id="market_echart2">
-				    	    			
-				    	    		</div>
-				    	    		<div id="market_echart3">
-				    	    			
-				    	    		</div>
-				    	    	</div>
+				    	    	
 				    	    	
 				    	    </div>
 				    	    
@@ -742,8 +716,744 @@
 				    	</div>
 				    	
 				    	<!--市场等级实销-->
+				    	<!--终端类型实销-->
+				    	<div class="ipaid_section">
+				    		<div class="title">
+				    		  <p>
+				    		  	<span>终端类型实销<span class="small">2018-04-01至2018-04-30</span></span>
+				    		  </p>
+				    		
+				    		
+				    	    </div>
+				    	    <div class="ipaid_content">
+				    	    	<!--所有-->
+				    	    	<div class="echart_box" >
+				    	    		<!--累计-->
+				    	    		<div class="table_wrapper">
+				    	    			<div class="table" style="height:370px ;">
+				    	    				<div class="table_left">
+				    	    					<div id="">
+				    	    						单位：万
+				    	    					</div>
+				    	    					<div class="">
+				    	    						类型
+				    	    					</div>
+				    	    					<div class="">
+				    	    						IT卖场
+				    	    					</div>
+				    	    					<div class="">
+				    	    					百货
+				    	    					</div>
+				    	    					<div class="">
+				    	    						电器连锁
+				    	    					</div>
+				    	    					<div class="">
+				    	    						商超连锁
+				    	    					</div>
+				    	    					<div class="">
+				    	    						书店
+				    	    					</div>
+				    	    					<div class="">
+				    	    						专卖店
+				    	    					</div>
+				    	    					<div class="">
+				    	    						联营店
+				    	    					</div>
+				    	    				</div>
+				    	    				<div class="year17">
+				    	    					<div class="">
+				    	    						17年
+				    	    					</div>
+				    	    					<div class="salebox">
+				    	    						<div class="">
+				    	    							有效终端数
+				    	    						</div>
+				    	    						<div>
+				    	    							台数
+				    	    						</div>
+				    	    						<div class="">
+				    	    							金额
+				    	    						</div>
+				    	    					</div>
+				    	    					<div class="salebox">
+				    	    						<div class="">
+				    	    							7
+				    	    						</div>
+				    	    						<div>
+				    	    							116
+				    	    						</div>
+				    	    						<div class="">
+				    	    							25.7
+				    	    						</div>
+				    	    					</div>
+				    	    					<div class="salebox">
+				    	    						<div class="">
+				    	    							8
+				    	    						</div>
+				    	    						<div>
+				    	    							55
+				    	    						</div>
+				    	    						<div class="">
+				    	    							13.8
+				    	    						</div>
+				    	    					</div>
+				    	    					<div class="salebox">
+				    	    						<div class="">
+				    	    							12
+				    	    						</div>
+				    	    						<div>
+				    	    							84
+				    	    						</div>
+				    	    						<div class="">
+				    	    							18.9
+				    	    						</div>
+				    	    					</div>
+				    	    					<div class="salebox">
+				    	    						<div class="">
+				    	    							12
+				    	    						</div>
+				    	    						<div>
+				    	    							64
+				    	    						</div>
+				    	    						<div class="">
+				    	    							13.6
+				    	    						</div>
+				    	    					</div>
+				    	    					<div class="salebox">
+				    	    						<div class="">
+				    	    							11
+				    	    						</div>
+				    	    						<div>
+				    	    							97
+				    	    						</div>
+				    	    						<div class="">
+				    	    							21.9
+				    	    						</div>
+				    	    					</div>
+				    	    					
+				    	    					<div class="salebox">
+				    	    						<div class="">
+				    	    							13
+				    	    						</div>
+				    	    						<div>
+				    	    							61
+				    	    						</div>
+				    	    						<div class="">
+				    	    							14.7
+				    	    						</div>
+				    	    					</div>
+				    	    					<div class="salebox">
+				    	    						<div class="">
+				    	    							3
+				    	    						</div>
+				    	    						<div>
+				    	    							16
+				    	    						</div>
+				    	    						<div class="">
+				    	    							2.9
+				    	    						</div>
+				    	    					</div>
+				    	    				</div>
+				    	    				<div class="year18">
+				    	    					<div class="">
+				    	    						18年
+				    	    					</div>
+				    	    					<div class="salebox">
+				    	    						<div class="">
+				    	    							有效终端数
+				    	    						</div>
+				    	    						<div>
+				    	    							台数
+				    	    						</div>
+				    	    						<div class="">
+				    	    							金额
+				    	    						</div>
+				    	    					</div>
+				    	    					<div class="salebox">
+				    	    						<div class="">
+				    	    							8
+				    	    						</div>
+				    	    						<div>
+				    	    							149
+				    	    						</div>
+				    	    						<div class="">
+				    	    							32.2
+				    	    						</div>
+				    	    					</div>
+				    	    					<div class="salebox">
+				    	    						<div class="">
+				    	    							11
+				    	    						</div>
+				    	    						<div>
+				    	    							75
+				    	    						</div>
+				    	    						<div class="">
+				    	    							17.0
+				    	    						</div>
+				    	    					</div>
+				    	    					<div class="salebox">
+				    	    						<div class="">
+				    	    							11
+				    	    						</div>
+				    	    						<div>
+				    	    							142
+				    	    						</div>
+				    	    						<div class="">
+				    	    							26.6
+				    	    						</div>
+				    	    					</div>
+				    	    					<div class="salebox">
+				    	    						<div class="">
+				    	    							17
+				    	    						</div>
+				    	    						<div>
+				    	    							146
+				    	    						</div>
+				    	    						<div class="">
+				    	    							27.6
+				    	    						</div>
+				    	    					</div>
+				    	    					<div class="salebox">
+				    	    						<div class="">
+				    	    							14
+				    	    						</div>
+				    	    						<div>
+				    	    							119
+				    	    						</div>
+				    	    						<div class="">
+				    	    							26.2
+				    	    						</div>
+				    	    					</div>
+				    	    					<div class="salebox">
+				    	    						<div class="">
+				    	    							16
+				    	    						</div>
+				    	    						<div>
+				    	    							140
+				    	    						</div>
+				    	    						<div class="">
+				    	    							35.8
+				    	    						</div>
+				    	    					</div>
+				    	    					<div class="salebox">
+				    	    						<div class="">
+				    	    							3
+				    	    						</div>
+				    	    						<div>
+				    	    							12
+				    	    						</div>
+				    	    						<div class="">
+				    	    							2.7
+				    	    						</div>
+				    	    					</div>
+				    	    				</div>
+				    	    				<div class="compare">
+				    	    					<div class="">
+				    	    					同比
+				    	    					</div>
+				    	    					<div class="comparebox">
+				    	    						<div class="">
+				    	    							台数同比
+				    	    						</div>
+				    	    						<div class="">
+				    	    							金额同比
+				    	    						</div>
+				    	    					</div>
+				    	    					<div class="comparebox">
+				    	    						<div class="">
+				    	    							28.4%
+				    	    						</div>
+				    	    						<div class="">
+				    	    							25.5%
+				    	    						</div>
+				    	    					</div>
+				    	    					<div class="comparebox">
+				    	    						<div class="">
+				    	    							36.4%
+				    	    						</div>
+				    	    						<div class="">
+				    	    							23.1%
+				    	    						</div>
+				    	    					</div>
+				    	    					<div class="comparebox">
+				    	    						<div class="">
+				    	    							69.0%
+				    	    						</div>
+				    	    						<div class="">
+				    	    							41.0%
+				    	    						</div>
+				    	    					</div>
+				    	    					<div class="comparebox">
+				    	    						<div class="">
+				    	    							128.1%
+				    	    						</div>
+				    	    						<div class="">
+				    	    							102.0%
+				    	    						</div>
+				    	    					</div>
+				    	    					<div class="comparebox">
+				    	    						<div class="">
+				    	    							22.7%
+				    	    						</div>
+				    	    						<div class="">
+				    	    							19.9%
+				    	    						</div>
+				    	    					</div>
+				    	    					<div class="comparebox">
+				    	    						<div class="">
+				    	    							129.5%
+				    	    						</div>
+				    	    						<div class="">
+				    	    							143.4%
+				    	    						</div>
+				    	    					</div>
+				    	    					<div class="comparebox">
+				    	    						<div class="">
+				    	    							-25.0%
+				    	    						</div>
+				    	    						<div class="">
+				    	    							-5.0%
+				    	    						</div>
+				    	    					</div>
+				    	    				</div>
+				    	    				<div class="average">
+				    	    					<div class="">
+				    	    						平均单店产能(台)
+				    	    					</div>
+				    	    					<div class="averagebox">
+				    	    						<div class="">
+				    	    							17年
+				    	    						</div>
+				    	    						<div>
+				    	    							18年
+				    	    						</div>
+				    	    						<div class="">
+				    	    							同比
+				    	    						</div>
+				    	    					</div>
+				    	    					<div class="averagebox">
+				    	    						<div class="">
+				    	    							16.6
+				    	    						</div>
+				    	    						<div>
+				    	    							18.6
+				    	    						</div>
+				    	    						<div class="">
+				    	    							12.4%
+				    	    						</div>
+				    	    					</div>
+				    	    					<div class="averagebox">
+				    	    						<div class="">
+				    	    							6.9
+				    	    						</div>
+				    	    						<div>
+				    	    							6.8
+				    	    						</div>
+				    	    						<div class="">
+				    	    							-0.8%
+				    	    						</div>
+				    	    					
+				    	    					</div>
+				    	    					<div class="averagebox">
+				    	    						<div class="">
+				    	    							7.0
+				    	    						</div>
+				    	    						<div>
+				    	    							12.9
+				    	    						</div>
+				    	    						<div class="">
+				    	    							84.4%
+				    	    						</div>
+				    	    					
+				    	    					</div>
+				    	    					<div class="averagebox">
+				    	    						<div class="">
+				    	    							5.3
+				    	    						</div>
+				    	    						<div>
+				    	    							8.6
+				    	    						</div>
+				    	    						<div class="">
+				    	    							61.0%
+				    	    						</div>
+				    	    					
+				    	    					</div>
+				    	    					<div class="averagebox">
+				    	    						<div class="">
+				    	    							8.8
+				    	    						</div>
+				    	    						<div>
+				    	    							8.5
+				    	    						</div>
+				    	    						<div class="">
+				    	    							-3.6%
+				    	    						</div>
+				    	    					
+				    	    					</div>
+				    	    					<div class="averagebox">
+				    	    						<div class="">
+				    	    							4.7
+				    	    						</div>
+				    	    						<div>
+				    	    							8.8
+				    	    						</div>
+				    	    						<div class="">
+				    	    							86.5%
+				    	    						</div>
+				    	    					
+				    	    					</div>
+				    	    					<div class="averagebox">
+				    	    						<div class="">
+				    	    							5.3
+				    	    						</div>
+				    	    						<div>
+				    	    							4.0
+				    	    						</div>
+				    	    						<div class="">
+				    	    							-25.0%
+				    	    						</div>
+				    	    					
+				    	    					</div>
+				    	    					
+				    	    				</div>
+				    	    				<div style="clear: both;">
+				    	    					
+				    	    				</div>
+				    	    			</div>
+				    	    		</div>
+				    	    		<div class="sale_radio">
+				    	    			<img src="../img/classsale1.png"/>
+				    	    			<img src="../img/classsale2.png"/>
+				    	    		</div>
+				    	    	</div>
+				    	    	
+				    	    	
+				    	    	
+				    	    </div>
+				    	    
+				    	    
+				    	</div>
+				    	<!--终端类型实销-->
 				    	
-				    	<!--进货-->
+				    	
+				    	
+				    	<!--产品对比-->
+				    	<div class="ipaid_section">
+				    		<div class="title">
+				    		  <p>
+				    		  	<span>产品对比<span class="small">2018-04-01至2018-04-30</span></span>
+				    		  </p>
+				    		
+				    		
+				    	    </div>
+				    	    <div class="ipaid_content">
+				    	    	<!--所有-->
+				    	    	<div class="echart_box" >
+				    	    		<div class="sale_radio">
+				    	    			
+				    	    			<img src="../img/compare1.png"/>
+				    	    			<img src="../img/compare2.png"/>
+				    	    			<img src="../img/compare3.png"/>
+				    	    		</div>
+				    	    	</div>
+				    	    </div>
+				    	</div>    
+				    	<!--产品对比-->
+				    	
+				    	<!--学生平板-->
+				    	<div class="ipaid_section">
+				    		<div class="title">
+				    		  <p>
+				    		  	<span>学生平板<span class="small">2018-04-01至2018-04-30</span></span>
+				    		  </p>
+				    		
+				    		
+				    	    </div>
+				    	    <div class="ipaid_content">
+				    	    	<!--所有-->
+				    	    	<div class="echart_box" >
+				    	    		<div class="sale_radio">
+				    	    			
+				    	    			<img src="../img/salestudent1.png"/>
+				    	    			<img src="../img/salestudent2.png"/>
+				    	    			<img src="../img/salestudent3.png"/>
+				    	    		</div>
+				    	    	</div>
+				    	    </div>
+				    	</div>   
+				    	<!--学生平板-->
+				    	
+				    	<!--型号同比及份额走势-->
+				    	<div class="ipaid_section">
+				    		<div class="title">
+				    		  <p>
+				    		  	<span>型号同比及份额走势<span class="small">2018-04-01至2018-04-30</span></span>
+				    		  	
+				    		  	<span class="choose_class" ><span>机型</span><img src="../img/ipaid.png" alt="" width="30px"/ ></span>
+				    		  </p>
+				    		</div>
+				    		<div>
+				    		    <p>
+				    		  		<span class="choose_money" style="margin-right: 20px;">
+				    		  		         
+				    		  		    <select name="" style="width: 120px;" id="sale_select"> 
+				    		  			    <option value="按份额">按份额</option>
+		                                    <option value="按台数">按台数</option>
+				    		  		    </select>
+				    		  	    </span>
+				    		    </p>
+			
+				    	    </div>
+				    	    <div class="salecompare" id="salecompare1">
+				    	    	<img src="../img/salecompare1.png"/>
+				    	    </div>
+				    	    <div class="salecompare" id="salecompare2" style="display: none;">
+				    	    	<img src="../img/salecompare2.png"/>
+				    	    </div>
+				    	</div>
+				    	<!--型号同比及份额走势-->
+				    	
+				    	<!--终端数量同比-->
+				    	<div class="ipaid_section">
+				    		<div class="title">
+				    		  <p>
+				    		  	<span>终端数量同比<span class="small">2018-04-01至2018-04-30</span></span>
+				    
+				    		  </p>
+				    		</div>
+				    		<div class="ipaid_content">
+				    			<div class="echart_box">
+				    				<div>
+				    		            <p>
+				    		  		        <span class="choose_money" style="margin-right: 20px;">
+				    		  		         
+				    		  		          <ul name="" id="s_tab4" class="s_tab"> 
+				    		  			      <li class="s_active" style="color: #fff;">渠道类型</li>
+		                                      <li>市场等级</li>
+				    		  		          </ul>
+				    		  	            </span>
+				    		           </p>
+			
+				    	           </div>
+				    	           <div class="salecompare" id="endnum1">
+				    	    	     <img src="../img/endnum1_1.png"/>
+				    	    	     <img src="../img/endnum1_2.png"/>
+				    	           </div>
+				    	           <div class="salecompare" id="endnum2" style="display: none;">
+				    	    	      <img src="../img/endnum2_1.png"/>
+				    	    	      <img src="../img/endnum2_2.png"/>
+				    	           </div>
+				    	        </div>
+				    				
+				    		</div>
+				    			
+				    			
+				       </div>
+				    		
+				    	<!--终端数量同比-->
+				    	<!--产生实销终端占比-->
+				    	<div class="ipaid_section">
+				    		<div class="title">
+				    		  <p>
+				    		  	<span>产生实销终端占比<span class="small">2018-04-01至2018-04-30</span></span>
+				    
+				    		  </p>
+				    		</div>
+				    		<div class="ipaid_content">
+				    			<div class="echart_box">
+				    				<div>
+				    		            <p>
+				    		  		        <span class="choose_money" style="margin-right: 20px;">
+				    		  		         
+				    		  		          <ul name="" id="s_tab5" class="s_tab"> 
+				    		  			      <li class="s_active" style="color: #fff;">渠道类型</li>
+		                                      <li>市场等级</li>
+				    		  		          </ul>
+				    		  	            </span>
+				    		           </p>
+			
+				    	           </div>
+				    	           <div class="salecompare" id="endhappen1">
+				    	    	     <img src="../img/happen1.png"/>
+				    	    	    
+				    	           </div>
+				    	           <div class="salecompare" id="endhappen2" style="display: none;">
+				    	    	      <img src="../img/happen2.png"/>
+				    	    	    
+				    	           </div>
+				    	        </div>
+				    				
+				    		</div>
+				    			
+				    			
+				       </div>
+				    	
+				    	<!--产生实销终端占比-->
+				    	
+				    	<!--新增终端进度-->
+				    	<div class="ipaid_section">
+				    		<div class="title">
+				    		  <p>
+				    		  	<span>新增终端进度<span class="small">2018-04-01至2018-04-30</span></span>
+				    
+				    		  </p>
+				    		</div>
+				    		<div class="ipaid_content">
+				    			<div class="echart_box">
+				    				<div class="salecompare">
+				    					<img src="../img/new1.png"/>
+				    				</div>
+				    				<div class="salecompre">
+				    					<div>
+				    		               <p>
+				    		  		        <span class="choose_money" style="margin-right: 20px;">
+				    		  		         
+				    		  		          <ul name="" id="s_tab6" class="s_tab"> 
+				    		  			      <li class="s_active" style="color: #fff;">渠道类型</li>
+		                                      <li>市场等级</li>
+				    		  		          </ul>
+				    		  	            </span>
+				    		               </p>
+			
+				    	                </div>
+				    	                
+				    	                <div class="salecompare" id="newcompare1">
+				    	    	           <img src="../img/new2.png"/>
+				    	    	           <img src="../img/new4.png"style="width: 200px;" class="new4"/>
+				    	                </div>
+				    	                <div class="salecompare" id="newcompare2" style="display: none;">
+				    	    	          <img src="../img/new3.png"/>
+				    	    	          <img src="../img/new4.png" style="width: 200px;" class="new4"/>
+				    	               </div>
+				    	                
+				    				</div>
+				    	        </div>
+				    	   </div>
+				    	</div>
+				    	<!--新增终端进度-->
+				    	<!--新增终端/产生实销终端占比-->
+				    	<div class="ipaid_section">
+				    		<div class="title">
+				    		  <p>
+				    		  	<span>新增终端/产生实销终端占比<span class="small">2018-04-01至2018-04-30</span></span>
+				    
+				    		  </p>
+				    		</div>
+				    		<div class="ipaid_content">
+				    			<div class="echart_box">
+				    				<div>
+				    		            <p>
+				    		  		        <span class="choose_money" style="margin-right: 20px;">
+				    		  		         
+				    		  		          <ul name="" id="s_tab7" class="s_tab"> 
+				    		  			      <li class="s_active" style="color: #fff;">渠道类型</li>
+		                                      <li>市场等级</li>
+				    		  		          </ul>
+				    		  	            </span>
+				    		           </p>
+			
+				    	           </div>
+				    	           <div class="salecompare" id="proportion1">
+				    	    	     <img src="../img/proportion1.png"/>
+				    	    	    
+				    	           </div>
+				    	           <div class="salecompare" id="proportion2" style="display: none;">
+				    	    	      <img src="../img/proportion2.png"/>
+				    	    	    
+				    	           </div>
+				    	        </div>
+				    				
+				    		</div>
+				    			
+				    			
+				       </div>
+				    	<!--新增终端/产生实销终端占比-->
+				    	<!--新增终端实销-->
+				    	<div class="ipaid_section">
+				    		<div class="title">
+				    		  <p>
+				    		  	<span>新增终端实销<span class="small">2018-04-01至2018-04-30</span></span>
+				    
+				    		  </p>
+				    		</div>
+				    		<div class="ipaid_content">
+				    			<div class="echart_box">
+				    				
+				    	           <div class="salecompare" >
+				    	    	     <img src="../img/newendsale.png"/>
+				    	    	    
+				    	           </div>
+				    	           
+				    	        </div>
+				    				
+				    		</div>
+				    			
+				    			
+				       </div>
+				    	<!--新增终端实销-->
+				    	<!--新增终端各市场等级实销情况-->
+				    	<div class="ipaid_section">
+				    		<div class="title">
+				    		  <p>
+				    		  	<span>新增终端各市场等级实销情况<span class="small">2018-04-01至2018-04-30</span></span>
+				    
+				    		  </p>
+				    		</div>
+				    		<div class="ipaid_content">
+				    			<div class="echart_box">
+				    				<div>
+				    		            <p>
+				    		  		        <span class="choose_money" style="margin-right: 20px;">
+				    		  		         
+				    		  		          <ul name="" id="s_tab8" class="s_tab"> 
+				    		  			      <li class="s_active" style="color: #fff;">渠道类型</li>
+		                                      <li>市场等级</li>
+				    		  		          </ul>
+				    		  	            </span>
+				    		           </p>
+			
+				    	           </div>
+				    	           <div class="salecompare" id="condition1">
+				    	    	     <img src="../img/conditions1.png"/>
+				    	    	    
+				    	           </div>
+				    	           <div class="salecompare" id="condition2" style="display: none;">
+				    	    	      <img src="../img/conditions2.png"/>
+				    	    	    
+				    	           </div>
+				    	        </div>
+				    				
+				    		</div>
+				    			
+				    			
+				       </div>
+				    	<!--下级市场实销情况-->
+				    	
+				    	<div class="ipaid_section">
+				    		<div class="title">
+				    		  <p>
+				    		  	<span>下级市场实销情况<span class="small">2018-04-01至2018-04-30</span></span>
+				    
+				    		  </p>
+				    		</div>
+				    		<div class="ipaid_content">
+				    			<div class="echart_box">
+				    				
+				    	           <div class="salecompare" id="map">
+				    	    	     
+				    	    	    
+				    	           </div>
+				    	           <div class="salecompare">
+				    	    	      <img src="../img/downcompare.png"/>
+				    	    	    
+				    	           </div>
+				    	        </div>
+				    				
+				    		</div>
+				    			
+				    			
+				       </div>
+				       <!--下级市场实销情况-->
 				    </div>
 				</div>
 				

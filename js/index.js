@@ -50,23 +50,23 @@ else if(p1=="3000以上"){
 var p1=$(this).children('option:selected').val();//这就是selected的值 
 if(p1=="所有"){
 
-	$("#class_list2").prepend("<li><input type='checkbox'/>u16</li><li><input type='checkbox'value='u16(32G)'/>u16(32G)</li><li><input type='checkbox'/>u18</li><li><input type='checkbox'/>u19</li><li><input type='checkbox'/>u6S</li><li><input type='checkbox' />u7</li><li><input type='checkbox'/>u20</li><li><input type='checkbox'/>u28</li>")
+	$("#class_list2").prepend("<li><input type='checkbox' value='u16'/>u16</li><li><input type='checkbox'value='u16(32G)'/>u16(32G)</li><li><input type='checkbox' value='u18'/>u18</li><li><input type='checkbox' value='u19'/>u19</li><li><input type='checkbox'value='u6S'/>u6S</li><li><input type='checkbox' value='u7'/>u7</li><li><input type='checkbox' value='u20'/>u20</li><li><input type='checkbox' value='u28'/>u28</li>")
 }
 else if(p1=="儿童平板"){
 
-	$("#class_list2").prepend("<li><input type='checkbox' />V1</li><li><input type='checkbox' />V1S</li><li><input type='checkbox' />V2</li><li><input type='checkbox'/>V2标准版</li>")
+	$("#class_list2").prepend("<li><input type='checkbox'value='V1' />V1</li><li><input type='checkbox'value='V1S' />V1S</li><li><input type='checkbox' value='V2'/>V2</li><li><input type='checkbox' value='V2标准版'/>V2标准版</li>")
 
 }
 else if(p1=="儿童手表"){
-	$("#class_list2").prepend("<li><input type='checkbox' />UW1</li><li><input type='checkbox' />UW3</li><li><input type='checkbox' />UW5</li>")
+	$("#class_list2").prepend("<li><input type='checkbox'value='UW1' />UW1</li><li><input type='checkbox' value='UW3'/>UW3</li><li><input type='checkbox' value='UW5'/>UW5</li>")
 
 }
 else if(p1=="点读机"){
-	$("#class_list2").prepend("<li><input type='checkbox' />Q6</li><li><input type='checkbox' />Q6升级版</li><li><input type='checkbox' />Q6(8G)</li>")
+	$("#class_list2").prepend("<li><input type='checkbox' value='Q6'/>Q6</li><li><input type='checkbox' value='Q6升级版'/>Q6升级版</li><li><input type='checkbox'value='Q6(8G)' />Q6(8G)</li>")
 
 }
 else if(p1=="点读机及其他"){
-	$("#class_list2").prepend("<li><input type='checkbox' />A1高级版</li><li><input type='checkbox' />NE600</li><li><input type='checkbox' />NP18+</li><li><input type='checkbox' />小鸡叫叫</li>")
+	$("#class_list2").prepend("<li><input type='checkbox' value='A1高级版' />A1高级版</li><li><input type='checkbox' value='NE600'/>NE600</li><li><input type='checkbox' value='NP18+' />NP18+</li><li><input type='checkbox' value='小鸡叫叫'/>小鸡叫叫</li>")
 
 }
 }) 
@@ -423,9 +423,223 @@ $('#surebtn1').click(function(){
         ]
 
     });
-// setInterval("getdata()",1000);
+
 	
 })
+
+
+//幼教产品及实销
+
+var c = document.getElementById("childtotal");
+var childChart = echarts.init(c);
+var app = {};
+option = null;
+var posList = [
+    'left', 'right', 'top', 'bottom',
+    'inside',
+    'insideTop', 'insideLeft', 'insideRight', 'insideBottom',
+    'insideTopLeft', 'insideTopRight', 'insideBottomLeft', 'insideBottomRight'
+];
+
+app.configParameters = {
+    rotate: {
+        min: -90,
+        max: 90
+    },
+    align: {
+        options: {
+            left: 'left',
+            center: 'center',
+            right: 'right'
+        }
+    },
+    verticalAlign: {
+        options: {
+            top: 'top',
+            middle: 'middle',
+            bottom: 'bottom'
+        }
+    },
+    position: {
+        options: echarts.util.reduce(posList, function (map, pos) {
+            map[pos] = pos;
+            return map;
+        }, {})
+    },
+    distance: {
+        min: 0,
+        max: 100
+    }
+};
+
+app.config = {
+    rotate: 90,
+    align: 'left',
+    verticalAlign: 'middle',
+    position: 'insideBottom',
+    distance: 15,
+    onChange: function () {
+ 
+    }
+};
+
+
+var labelOption = {
+    normal: {
+        show: true,
+        position: app.config.position,
+        distance: app.config.distance,
+        align: app.config.align,
+        verticalAlign: app.config.verticalAlign,
+        rotate: app.config.rotate,
+        formatter: '{c}  {name|{a}}',
+        fontSize: 16,
+        rich: {
+            name: {
+                textBorderColor: '#fff'
+            }
+        }
+    }
+};
+
+child={
+	0:{
+		in:[0,265,230,0],
+		out:[4,183,190,8],
+		differ:[-4,82,40,-8]
+	},
+	1:{
+		in:[0,400,300],
+		out:[70,375,81],
+		differ:[-70,25,219]
+	},
+	2:{
+		in:[200,0,0],
+		out:[6,8,32,1607],
+		differ:[194,-8,-32]
+	},
+	3:{
+		in:[0,0,0,0],
+		out:[15,27,0,64],
+		differ:[-15,-27,0,-64]
+	}
+}
+option3 = {
+    color: ['#003366', '#006699', '#4cabce'],
+    tooltip: {
+        trigger: 'axis',
+        axisPointer: {
+            type: 'shadow'
+        }
+    },
+    legend: {
+        data: ['累计进货台数', '累计实销台数', '库存差台数']
+    },
+
+    calculable: true,
+    xAxis: [
+        {
+            type: 'category',
+            axisTick: {show: false},
+            data: ['儿童平板', '儿童手表', '点读笔', '点读机及其他']
+        }
+    ],
+    yAxis: [
+        {
+            type: 'value'
+        }
+    ],
+    series: [
+        {
+            name: '累计进货台数',
+            type: 'bar',
+            barGap: 0,
+            label: labelOption,
+            data: [495,700,200,0]
+        },
+        {
+            name: '累计实销台数',
+            type: 'bar',
+            label: labelOption,
+            data: [385, 526,46,106]
+        },
+        {
+            name: '库存差台数',
+            type: 'bar',
+            label: labelOption,
+            data: [100,174,154,-160]
+        },
+
+    ]
+};
+if (option3 && typeof option3 === "object") {
+    childChart.setOption(option3, true);
+}
+
+$('#surebtn2').click(function(){
+	var p1=$('#child_select').children('option:selected').val()
+	var arr =new Array()
+	var new_inarr = []
+	var new_outarr = []
+	var new_differarr = []
+	var ck=$('#class_list2 :input[type=checkbox]')
+	if(p1=='儿童平板'){
+		var inArr =student[0].in
+	var outArr=student[0].out
+	var differArr = student[0].differ
+	}
+	else if(p1=='儿童手表'){
+		var inArr =student[1].in
+	var outArr=student[1].out
+	var differArr = student[1].differ
+	}
+	else if(p1=='点读机'){
+		var inArr =student[2].in
+	var outArr=student[2].out
+	var differArr = student[2].differ
+	}
+	else if(p1=='点读机及其他'){
+		var inArr =student[3].in
+	var outArr=student[3].out
+	var differArr = student[3].differ
+	}
+	ck.each(function(index){
+    if($(this).is(':checked')){    
+        arr.push($(this).val())
+        new_inarr.push(inArr[index])
+        new_outarr.push(outArr[index])
+        new_differarr.push(differArr[index])
+    }
+
+	
+})
+
+	
+     childChart.setOption({
+        xAxis: {
+            data: arr
+
+        },
+        series:[
+        {
+        	data:new_inarr
+        },
+        {
+        	data:new_outarr
+        },
+        {
+        	data:new_differarr
+        },
+        ]
+
+    });
+
+	
+})
+
+
+
+
  $(function(){
   function show(){
    var mydate = new Date();
@@ -535,14 +749,111 @@ $('#surebtn1').click(function(){
   
   
 //终端销售台数
+   //100万以上
+ $(function(){
+ 	var listBefore=new Array("金花国美","城固新华教育电子","北赛格电脑城","咸阳新华书店","雁塔路赛格电脑城");
+    var listAfter = new Array("金花苏宁","汉唐书城")
+ list_before="";
+ list_after="";
+for (var i=0;i<listBefore.length;i++)
+{
+  list_before +="<p>"+listBefore[i]+"</p>";
+}
+for (var j=0;j<listAfter.length;j++)
+{
+  list_after +="<p>"+listAfter[j]+"</p>";
+}
+console.log(list_before)
+$('#list_before').prepend(list_before);
+ $('#list_after').prepend( list_after);	
+ 	
+ })
+   $('#list_select').change(function(){ 
+  	$('#list_before').empty()
+  	$('#list_after').empty()
+  	var p1=$('#list_select').children('option:selected').val()	
+  	var p2=$('#list_select2').children('option:selected').val()	
+  	if(p1=="年实销金额100万以上"){
+  			var listBefore=new Array("金花国美","城固新华教育电子","北赛格电脑城","咸阳新华书店","雁塔路赛格电脑城");
+           var listAfter = new Array("金花苏宁","汉唐书城")
+           var lastyear = [28874,23682,70128,25676,81156,54326,79136]
+           var thisyear = [65732,53264,84942,30772,81330,37946,55226]
+           var zenfu = [127.7,124.9,21.1,19.8,0.2,-30.2,-30.2]
+  	}
+  	else if(p1=="年实销金额50-100万"){
+  	
+  		 var listBefore=new Array("优学派新华书店体验店","泾阳专卖店","阎良人人乐","优学派神木专卖店","彬县公刘街润家购物广场");
+         var listAfter = new Array("小寨赛格国际购物中心","西大街国美","陕西电子城","宝鸡万邦书城","西二环国美")
+         var lastyear = [28874,23682,70128,25676,81156,54326,79136]
+         var thisyear = [65732,53264,84942,30772,81330,37946,55226]
+  	     var zenfu = [612.0,471.2,284.1,160.8,137.4,60.5,24.6]
+  	}
+  	else if(p1=="年实销金额30-50万"){
+  		var listBefore=new Array("优学派轻工专柜","北二环国美","周至隆发商城","武功诺亚舟专卖","安康市汉唐书城");
+        var listAfter = new Array("洛川华商城","新华书店","临潼昌盛数码","正大商场","新华书店")
+  	    var lastyear = [6994,4496,12488,30076,17588,43910,79136]
+        var thisyear = [49798,25682,47964,78436,41756,70472,40470]
+         var zenfu = [812.1,566.0,294.8,205.7,100,100,49.6]
+  	}
+  	else if(p1=="年实销金额10-30万"){
+  		var listBefore=new Array("莲湖苏宁","兴庆国美","优学派定边体验店","南郊人人乐","华润万家西影路店");
+        var listAfter = new Array("扶风文海书店(新区)","优学派府谷专卖店","客都超市优学派专卖","阎良新世纪","长安百货")
+  	    var lastyear = [2698,3996,4496,6792,5794,4696,4696]
+        var thisyear = [18124,11888,12890,19082,16074,11290,9892]
+  	    var zenfu = [571.8,197.5,186.7,180.9,177.4,140.4,110.6]
+  	}
+  	list_before="";
+    list_after="";
+    
+for (var i=0;i<listBefore.length;i++)
+{
+  list_before +="<p>"+listBefore[i]+"</p>";
+}
+for (var j=0;j<listAfter.length;j++)
+{
+  list_after +="<p>"+listAfter[j]+"</p>";
+}
+console.log(list_before)
+$('#list_before').prepend(list_before);
+ $('#list_after').prepend( list_after);	
+ if(p2=="按金额"){
+ 	
+ 
+ 	
+ } else{
+ 	
+ }
+	   endNumChart.setOption({
+        xAxis: {
+            data: listBefore
+
+        },
+        series:[
+        {
+        	data:lastyear
+        },
+        {
+        	data:thisyear
+        },
+        {
+        	data:zenfu
+        },
+        ]
+
+    });
+ 
+ 	
+  	})
+
+
 var  end_num = document.getElementById("end_num");
 var endNumChart = echarts.init(end_num);
 var app = {};
-option = null;
+option4 = null;
 app.title = '折柱混合';
 
 
-option = {
+option4 = {
     tooltip: {
         trigger: 'axis',
         axisPointer: {
@@ -561,7 +872,7 @@ option = {
         }
     },
     legend: {
-        data:['17年4月实销台数','18年4月实销台数','数量同比增幅']
+        data:['17年4月实销金额','18年4月实销金额','数量同比增幅']
     },
     xAxis: [
         {
@@ -576,7 +887,7 @@ option = {
     yAxis: [
         {
             type: 'value',
-            name: '台数',
+            name: '金额',
             min: 0,
             max: 100000,
             interval: 25000,
@@ -587,9 +898,9 @@ option = {
         {
             type: 'value',
             name: '同比增幅',
-            min: -50,
-            max: 150,
-            interval: 50,
+            min: -100,
+            max: 900,
+            interval: 100,
             axisLabel: {
                 formatter: '{value} %'
             }
@@ -597,12 +908,12 @@ option = {
     ],
     series: [
         {
-            name:'17年4月实销台数',
+            name:'17年4月实销金额',
             type:'bar',
             data:[79136, 81156, 70128, 25676,54326, 28874, 23682]
         },
         {
-            name:'18年4月实销台数',
+            name:'18年4月实销金额',
             type:'bar',
             data:[55226,81330, 84942, 30772, 37946, 65732,53264]
         },
@@ -615,6 +926,211 @@ option = {
     ]
 };
 
-if (option && typeof option === "object") {
-    endNumChart.setOption(option, true);
+if (option4 && typeof option4 === "object") {
+    endNumChart.setOption(option4, true);
 }
+ //原有终端实销同比
+ 
+$("#differ_select").change(function(){
+	var p=$("#differ_select").children('option:selected').val()
+	if(p=="按金额"){
+		$('#beforediffer2').hide()
+		$('#beforediffer').show()
+	}
+	else{
+		$('#beforediffer').hide()
+		$('#beforediffer2').show()
+	}
+	
+})
+
+$("#sale_select").change(function(){
+	var p=$("#sale_select").children('option:selected').val()
+	if(p=="按份额"){
+		$('#salecompare2').hide()
+		$('#salecompare1').show()
+	}
+	else{
+		$('#salecompare1').hide()
+		$('#salecompare2').show()
+	}
+	
+})
+$('#s_tab4 li').click(function(){
+	$(this).addClass('s_active')
+	$(this).css('color','#fff')
+	$(this).siblings('li').removeClass('s_active')
+	$(this).siblings('li').css('color','#cbcdd0')
+	if($(this).text()=="渠道类型"){
+		$('#endnum2').hide()
+		$('#endnum1').show()
+	}
+	else if($(this).text()=="市场等级"){
+		
+		$('#endnum1').hide()
+		$('#endnum2').show()
+	}
+})
+$('#s_tab5 li').click(function(){
+	$(this).addClass('s_active')
+	$(this).css('color','#fff')
+	$(this).siblings('li').removeClass('s_active')
+	$(this).siblings('li').css('color','#cbcdd0')
+	if($(this).text()=="渠道类型"){
+		$('#endhappen2').hide()
+		$('#endhappen1').show()
+	}
+	else if($(this).text()=="市场等级"){
+		
+		$('#endhappen1').hide()
+		$('#endhappen2').show()
+	}
+})
+$('#s_tab6 li').click(function(){
+	$(this).addClass('s_active')
+	$(this).css('color','#fff')
+	$(this).siblings('li').removeClass('s_active')
+	$(this).siblings('li').css('color','#cbcdd0')
+	if($(this).text()=="渠道类型"){
+		$('#newcompare2').hide()
+		$('#newcompare1').show()
+	}
+	else if($(this).text()=="市场等级"){
+		
+		$('#newcompare1').hide()
+		$('#newcompare2').show()
+	}
+})
+$('#s_tab7 li').click(function(){
+	$(this).addClass('s_active')
+	$(this).css('color','#fff')
+	$(this).siblings('li').removeClass('s_active')
+	$(this).siblings('li').css('color','#cbcdd0')
+	if($(this).text()=="渠道类型"){
+		$('#proportion2').hide()
+		$('#proportion1').show()
+	}
+	else if($(this).text()=="市场等级"){
+		
+		$('#proportion1').hide()
+		$('#proportion2').show()
+	}
+})
+$('#s_tab8 li').click(function(){
+	$(this).addClass('s_active')
+	$(this).css('color','#fff')
+	$(this).siblings('li').removeClass('s_active')
+	$(this).siblings('li').css('color','#cbcdd0')
+	if($(this).text()=="渠道类型"){
+		$('#condition2').hide()
+		$('#condition1').show()
+	}
+	else if($(this).text()=="市场等级"){
+		
+		$('#condition1').hide()
+		$('#condition2').show()
+	}
+})
+
+
+//地图
+
+
+var mapChart = echarts.init(document.getElementById('map'));
+        mapChart.showLoading();
+        $.get('../js/shanxi.json', function (geoJson) {
+            mapChart.hideLoading();
+            echarts.registerMap('陕西', geoJson);
+
+            mapChart.setOption(
+            	option5 = {
+//              visualMap: {
+//                  min: 0,
+//                  max: 500,
+//                  show: false,
+//                  splitNumber: 5,
+//                  realtime: false,
+//                 calculable: true,
+                    inRange: {
+                        color: ['#313695', '#4575b4', '#74add1', '#abd9e9', '#e0f3f8', '#ffffbf', '#fee090', '#fdae61', '#f46d43', '#d73027', '#a50026']
+                    },
+//                  textStyle: {
+//                      color: '#fff'
+//                  }
+//              },
+      tooltip: {
+            trigger: 'item',
+            formatter: '{b}<br/>{c} (p / km2)'
+        },
+              toolbox: {
+            show: true,
+            //orient: 'vertical',
+            left: 'left',
+            top: 'top',
+            feature: {
+                dataView: {readOnly: false},
+                restore: {},
+                saveAsImage: {}
+            }
+        },
+                   visualMap: {
+              min: 0,
+            max: 500,
+            text:['High','Low'],
+            realtime: false,
+            calculable: true,
+            inRange: {
+                color: ['lightskyblue','yellow', 'orangered']
+            }
+        },
+        dataRange: {  
+                        min: 0,  
+                        max: 1000000,  
+                        text:['High','Low'],  
+                        realtime: false,  
+                        calculable : true,  
+                        color: ['orangered','yellow','lightskyblue']  
+                    },  
+                geo: {
+                    map: '陕西',
+                    label: {
+                        normal: {
+                            show: true,
+                            color: '#fff'
+                        },
+                        emphasis: {
+                            show: true,
+                            color: '#fff'
+                        }
+                    },
+//                  roam: false,
+//                  itemStyle: {
+//                      normal: {
+////                          areaColor: '#40458e',
+//                          borderColor: '#6367ad',
+//                          borderWidth: 1.5
+//                      },
+//                      emphasis: {
+////                          areaColor: '#40458e'
+//                      }
+//                  },
+                    "left": 0,
+                    "right": 0,
+                    "top": 0,
+                    "bottom": 0
+                },
+                series: [
+                {
+                    name: '活跃人数分布',
+                    type: 'heatmap',
+                    coordinateSystem: 'geo',
+                    blurSize: 30,
+                    data: [],
+                     itemStyle:{
+                    normal:{label:{show:true}},
+                    emphasis:{label:{show:true}}
+                },
+                }
+                ]
+            });
+        });
