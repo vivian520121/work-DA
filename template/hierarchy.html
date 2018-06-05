@@ -58,7 +58,7 @@
 						        <span id="" class="small">
 						        	至
 						        </span>
-						       <input type="" name="" id="nextday" value="" class="time"/>
+						       <input type="" name="" id="nextday" value="" class="time mh_date" />
 					        </div>
 					        <div class="inp_box" >
 						        <label for="" style="padding-right: 18px;">对比时间</label>
@@ -424,16 +424,11 @@
 				    	    		
 				    	             
 				    	    	</div>
-				    	    	<div>
-				    		        <p>
-				    		  			<span class="choose_money" style="margin-right: 20px;">
-				    		  		         
-				    		  		        <select name="" style="width: 120px;" id="list_select2"> 
-				    		  			        <option value="按金额">按金额</option>
-		                                        <option value="按台数">按台数</option>
-				    		  		        </select>
-				    		  	        </span>
-				    		        </p>
+				    	    	<div class="tab_box">
+				    		        <ul name="" id="s_tab1" class="s_tab"> 
+				    		  			 <li class="s_active" style="color: #fff;">金额</li>
+		                                 <li>台数</li>
+				    		  		</ul>
 			
 				    	        </div>
 				    	        <div id="end_num">
@@ -458,16 +453,11 @@
 				    	    	<!--所有-->
 				    	    	<div class="echart_box" >
 				    	    		<!--累计-->
-				    	    		<div>
-				    		        <p>
-				    		  			<span class="choose_money" style="margin-right: 20px;">
-				    		  		         
-				    		  		        <select name="" style="width: 120px;" id="differ_select"> 
-				    		  			        <option value="按金额">按金额</option>
-		                                        <option value="按台数">按台数</option>
-				    		  		        </select>
-				    		  	        </span>
-				    		        </p>
+				    	    		<div class="tab_box">
+				    		        <ul name="" id="s_tab2" class="s_tab"> 
+				    		  			 <li class="s_active" style="color: #fff;">金额</li>
+		                                 <li>台数</li>
+				    		  		</ul>
 			
 				    	        </div>
 				    	    		<div id="beforediffer" style="margin: 0 auto;">
@@ -1192,18 +1182,15 @@
 				    		  	<span class="choose_class" ><span>机型</span><img src="../img/ipaid.png" alt="" width="30px"/ ></span>
 				    		  </p>
 				    		</div>
-				    		<div>
-				    		    <p>
-				    		  		<span class="choose_money" style="margin-right: 20px;">
-				    		  		         
-				    		  		    <select name="" style="width: 120px;" id="sale_select"> 
-				    		  			    <option value="按份额">按份额</option>
-		                                    <option value="按台数">按台数</option>
-				    		  		    </select>
-				    		  	    </span>
-				    		    </p>
-			
-				    	    </div>
+				    		<div class="tab_box">
+				    		               
+				    		  		       
+				    		  		          <ul name="" id="s_tab3" class="s_tab"> 
+				    		  			      <li class="s_active" style="color: #fff;">份额</li>
+		                                      <li>台数</li>
+				    		  		          </ul>
+				    		  	        
+				    	                </div>
 				    	    <div class="salecompare" id="salecompare1">
 				    	    	<img src="../img/salecompare1.png"/>
 				    	    </div>
@@ -1223,16 +1210,16 @@
 				    		</div>
 				    		<div class="ipaid_content">
 				    			<div class="echart_box">
-				    				<div>
-				    		            <p>
-				    		  		        <span class="choose_money" style="margin-right: 20px;">
+				    				<div class="tab_box">
+				    		          
+				    		  	
 				    		  		         
 				    		  		          <ul name="" id="s_tab4" class="s_tab"> 
 				    		  			      <li class="s_active" style="color: #fff;">渠道类型</li>
 		                                      <li>市场等级</li>
 				    		  		          </ul>
-				    		  	            </span>
-				    		           </p>
+				    		  	         
+				    		          
 			
 				    	           </div>
 				    	           <div class="salecompare" id="endnum1">
@@ -1261,16 +1248,13 @@
 				    		</div>
 				    		<div class="ipaid_content">
 				    			<div class="echart_box">
-				    				<div>
-				    		            <p>
-				    		  		        <span class="choose_money" style="margin-right: 20px;">
-				    		  		         
+				    				<div class="tab_box">
+				    		            
 				    		  		          <ul name="" id="s_tab5" class="s_tab"> 
 				    		  			      <li class="s_active" style="color: #fff;">渠道类型</li>
 		                                      <li>市场等级</li>
 				    		  		          </ul>
-				    		  	            </span>
-				    		           </p>
+				    		  	       
 			
 				    	           </div>
 				    	           <div class="salecompare" id="endhappen1">
@@ -1304,17 +1288,14 @@
 				    					<img src="../img/new1.png"/>
 				    				</div>
 				    				<div class="salecompre">
-				    					<div>
-				    		               <p>
-				    		  		        <span class="choose_money" style="margin-right: 20px;">
-				    		  		         
+				    					<div class="tab_box">
+				    		               
+				    		  		       
 				    		  		          <ul name="" id="s_tab6" class="s_tab"> 
 				    		  			      <li class="s_active" style="color: #fff;">渠道类型</li>
 		                                      <li>市场等级</li>
 				    		  		          </ul>
-				    		  	            </span>
-				    		               </p>
-			
+				    		  	        
 				    	                </div>
 				    	                
 				    	                <div class="salecompare" id="newcompare1">
@@ -1341,17 +1322,14 @@
 				    		</div>
 				    		<div class="ipaid_content">
 				    			<div class="echart_box">
-				    				<div>
-				    		            <p>
-				    		  		        <span class="choose_money" style="margin-right: 20px;">
+				    				<div class="tab_box">
+				    		           
 				    		  		         
 				    		  		          <ul name="" id="s_tab7" class="s_tab"> 
 				    		  			      <li class="s_active" style="color: #fff;">渠道类型</li>
 		                                      <li>市场等级</li>
 				    		  		          </ul>
-				    		  	            </span>
-				    		           </p>
-			
+				    		  	      
 				    	           </div>
 				    	           <div class="salecompare" id="proportion1">
 				    	    	     <img src="../img/proportion1.png"/>
@@ -1401,16 +1379,13 @@
 				    		</div>
 				    		<div class="ipaid_content">
 				    			<div class="echart_box">
-				    				<div>
-				    		            <p>
-				    		  		        <span class="choose_money" style="margin-right: 20px;">
-				    		  		         
+				    				<div class="tab_box">
+				    		            
 				    		  		          <ul name="" id="s_tab8" class="s_tab"> 
 				    		  			      <li class="s_active" style="color: #fff;">渠道类型</li>
 		                                      <li>市场等级</li>
 				    		  		          </ul>
-				    		  	            </span>
-				    		           </p>
+				    		  	        
 			
 				    	           </div>
 				    	           <div class="salecompare" id="condition1">

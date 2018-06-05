@@ -1,4 +1,8 @@
-
+$('.tab li').click(function(){
+	$(this).addClass('active')
+	$(this).siblings('li').removeClass('active')
+	
+})
 $(function() {
 	$.fn.manhuaDate = function(options) {
 		var defaults = {
@@ -172,8 +176,14 @@ $(function() {
                  var week = today[day.getDay()];  
                   var week2 = today[day2.getDay()]; 
 				$("input.dateVisited").val(str+week);
-				$("#last_today").val(str2+week2)
-				$("#last_next").val(str2+week2)
+				if($("input.dateVisited").attr('id')=="today"){
+					$("#last_today").val(str2+week2)
+				}
+				else{
+					$("#last_next").val(str2+week2)
+				}
+				
+				
 				$("input.dateVisited").removeClass('dateVisited')
 				$(".calender").hide();
 			}
@@ -181,11 +191,11 @@ $(function() {
 	
 		$mhInput.live(options.Event,function(e){											
 			
-			if($(this).attr('id')=="today"){
+//			if($(this).attr('id')=="today"){
 				$(this).addClass("dateVisited");
-				$('#nextday').addClass("dateVisited")
+//				$('#nextday').addClass("dateVisited")
 				
-			}
+//			}
 			
 			if(stc){
 				clearTimeout(stc);

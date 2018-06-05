@@ -772,7 +772,7 @@ $('#list_before').prepend(list_before);
   	$('#list_before').empty()
   	$('#list_after').empty()
   	var p1=$('#list_select').children('option:selected').val()	
-  	var p2=$('#list_select2').children('option:selected').val()	
+  	var p2=$('#s_tab1').children('.s_active').text()	
   	if(p1=="年实销金额100万以上"){
   			var listBefore=new Array("金花国美","城固新华教育电子","北赛格电脑城","咸阳新华书店","雁塔路赛格电脑城");
            var listAfter = new Array("金花苏宁","汉唐书城")
@@ -816,9 +816,9 @@ for (var j=0;j<listAfter.length;j++)
 console.log(list_before)
 $('#list_before').prepend(list_before);
  $('#list_after').prepend( list_after);	
- if(p2=="按金额"){
+ if(p2=="金额"){
  	
- 
+ console.log(p2)
  	
  } else{
  	
@@ -931,9 +931,13 @@ if (option4 && typeof option4 === "object") {
 }
  //原有终端实销同比
  
-$("#differ_select").change(function(){
-	var p=$("#differ_select").children('option:selected').val()
-	if(p=="按金额"){
+$("#s_tab2 li").click(function(){
+	$(this).addClass('s_active')
+	$(this).css('color','#fff')
+	$(this).siblings('li').removeClass('s_active')
+	$(this).siblings('li').css('color','#cbcdd0')
+	
+	if($(this).text()=="金额"){
 		$('#beforediffer2').hide()
 		$('#beforediffer').show()
 	}
@@ -944,9 +948,14 @@ $("#differ_select").change(function(){
 	
 })
 
-$("#sale_select").change(function(){
-	var p=$("#sale_select").children('option:selected').val()
-	if(p=="按份额"){
+$("#s_tab3 li").click(function(){
+	$(this).addClass('s_active')
+	$(this).css('color','#fff')
+	$(this).siblings('li').removeClass('s_active')
+	$(this).siblings('li').css('color','#cbcdd0')
+	
+	if($(this).text()=="份额"){
+	
 		$('#salecompare2').hide()
 		$('#salecompare1').show()
 	}
@@ -957,16 +966,18 @@ $("#sale_select").change(function(){
 	
 })
 $('#s_tab4 li').click(function(){
+
 	$(this).addClass('s_active')
 	$(this).css('color','#fff')
 	$(this).siblings('li').removeClass('s_active')
 	$(this).siblings('li').css('color','#cbcdd0')
 	if($(this).text()=="渠道类型"){
+		
 		$('#endnum2').hide()
 		$('#endnum1').show()
 	}
 	else if($(this).text()=="市场等级"){
-		
+
 		$('#endnum1').hide()
 		$('#endnum2').show()
 	}
@@ -1038,113 +1049,87 @@ $('#s_tab8 li').click(function(){
 
 var mapChart = echarts.init(document.getElementById('map'));
         mapChart.showLoading();
+        var $imgs = [
+        {
+        area: '榆林市', 	url:'../img/hover1.png'
+        },
+        {
+        	area: '商洛市', 	url:'../img/endnum1_2.png'
+        }
+        ]
         $.get('../js/shanxi.json', function (geoJson) {
             mapChart.hideLoading();
-            echarts.registerMap('陕西', geoJson);
 
-            mapChart.setOption(
-            	option5 = {
-//              visualMap: {
-//                  min: 0,
-//                  max: 500,
-//                  show: false,
-//                  splitNumber: 5,
-//                  realtime: false,
-//                 calculable: true,
-                    inRange: {
-                        color: ['#313695', '#4575b4', '#74add1', '#abd9e9', '#e0f3f8', '#ffffbf', '#fee090', '#fdae61', '#f46d43', '#d73027', '#a50026']
-                    },
-//                  textStyle: {
-//                      color: '#fff'
-//                  }
-//              },
-      tooltip: {
+    echarts.registerMap('HK', geoJson);
+
+    mapChart.setOption(option = {
+
+        tooltip: {
             trigger: 'item',
-            formatter: '{b}<br/>{c} (p / km2)'
+              formatter: function (params,ticket,callback){
+                var $pna = params.name;
+                var res = '';
+                
+                for(var i = 0;i<$imgs.length;i++){
+                    if($imgs[i].area == $pna){
+                        res = '<img src="'+ $imgs[i].url +'" style="width:300px" />';//设置自定义数据的模板，这里的模板是图片
+                        //console.log(res);
+                        break;
+                    }
+                }
+                
+                setTimeout(function (){
+                    // 仅为了模拟异步回调
+                    callback(ticket, res);//回调函数，这里可以做异步请求加载的一些代码
+                }, 1000)
+                return 'loading';
+            }
         },
-              toolbox: {
+        toolbox: {
             show: true,
-            //orient: 'vertical',
-            left: 'left',
-            top: 'top',
+            orient: 'vertical',
+            left: 'right',
+            top: 'center',
             feature: {
                 dataView: {readOnly: false},
                 restore: {},
                 saveAsImage: {}
             }
         },
-                   visualMap: {
-              min: 0,
-            max: 500,
+        visualMap: {
+            min: 800,
+            max: 50000,
             text:['High','Low'],
             realtime: false,
             calculable: true,
             inRange: {
-                color: ['lightskyblue','yellow', 'orangered']
+                color: ['#1F94F1','yellow', '#FE3A20']
             }
         },
-//      dataRange: {  
-//                      min: 0,  
-//                      max: 1000000,  
-//                      text:['High','Low'],  
-//                      realtime: false,  
-//                      calculable : true,  
-//                      color: ['orangered','yellow','lightskyblue']  
-//                  },  
-                geo: {
-                    map: '陕西',
-                    label: {
-                        normal: {
-                            show: true,
-                            color: '#fff'
-                        },
-                        emphasis: {
-                            show: true,
-                            color: '#fff'
-                        }
-                    },
-
-                    "left": 0,
-                    "right": 0,
-                    "top": 0,
-                    "bottom": 0
-                },
-                series: [
-                {
-                    name: '活跃人数分布',
-                    type: 'map',
-                    coordinateSystem: 'geo',
-                    blurSize: 30,
-                      itemStyle:{
+               series: [
+            {
+                name: '香港18区人口密度',
+                type: 'map',
+                mapType: 'HK', // 自定义扩展图表类型
+                itemStyle:{
                     normal:{label:{show:true}},
                     emphasis:{label:{show:true}}
                 },
-                      data:[
-                    {name: '榆林市', value: 400}
-//                  {name: '湾仔', value: 15477.48},
-//                  {name: '东区', value: 31686.1},
-//                  {name: '南区', value: 6992.6},
-//                  {name: '油尖旺', value: 44045.49},
-//                  {name: '深水埗', value: 40689.64},
-//                  {name: '九龙城', value: 37659.78},
-//                  {name: '黄大仙', value: 45180.97},
-//                  {name: '观塘', value: 55204.26},
-//                  {name: '葵青', value: 21900.9},
-//                  {name: '荃湾', value: 4918.26},
-//                  {name: '屯门', value: 5881.84},
-//                  {name: '元朗', value: 4178.01},
-//                  {name: '北区', value: 2227.92},
-//                  {name: '大埔', value: 2180.98},
-//                  {name: '沙田', value: 9172.94},
-//                  {name: '西贡', value: 3368},
-//                  {name: '离岛', value: 806.98}
+                data:[
+                    {name: '榆林市', value: 49000.34},
+                    {name: '延安市', value: 13452.48},
+                    {name: '铜川市', value: 41214.1},
+                    {name: '渭南市', value: 41214.1},
+                    {name: '咸阳市', value: 49000.34},
+                    {name: '宝鸡市', value: 41214.1},
+                    {name: '西安市', value: 41214.1},
+                    {name: '汉中市', value: 41214.1},
+                    {name: '商洛市', value: 800.26},
+                    {name: '安康市', value:49000.34},
+                    
                 ],
-                     itemStyle:{
-                    normal:{label:{show:true}},
-                    emphasis:{label:{show:true}}
-                },
-                },
-                
-                ]
+               
+            }
+        ]
             });
         });
