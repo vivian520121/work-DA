@@ -1,3 +1,4 @@
+
 //学生平板
 $('#choose_class').click(function(){
 	var p1=$('#stu_select').children('option:selected').val();
